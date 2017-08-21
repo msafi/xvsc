@@ -1,11 +1,11 @@
 {
     "name": "trailscasts",
-    "displayName": "Trailscasts theme",
-    "description": "Trailscasts is a dark theme based on Railscasts",
+    "displayName": "trailscasts",
+    "description": "Trailscasts",
     "version": "1.0.0",
-    "publisher": "M.K. Safi",
+    "publisher": "msafi",
     "engines": {
-        "vscode": "^1.11.0"
+        "vscode": "^1.15.0"
     },
     "categories": [
         "Themes"
@@ -15,7 +15,7 @@
             {
                 "label": "Trailscasts",
                 "uiTheme": "vs-dark",
-                "path": "./themes/trailscasts.tmTheme"
+                "path": "./themes/Trailscasts-color-theme.json"
             }
         ]
     }
