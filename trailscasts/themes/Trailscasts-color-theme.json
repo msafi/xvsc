@@ -19,7 +19,10 @@
 		{
 			"name": "Cyan",
 			"scope": [
-				"variable"
+				"variable",
+
+				// Markdown: link
+				"markup.underline"
 			],
 			"settings": {
 				"foreground": "#7CBFBF"
@@ -29,7 +32,12 @@
 			"name": "Green",
 			"scope": [
 				"string",
-				"constant.numeric" // Numbers
+
+				// JavaScript: numbers
+				"constant.numeric",
+
+				// Markdown: stuff between tick marks, i.e. `stuff`
+				"markup.inline.raw"								
 			],
 			"settings": {
 				"foreground": "#C2E07CD3"
@@ -48,7 +56,11 @@
 				"constant.language",
 
 				// JavaScript: this
-				"variable.language.this"
+				"variable.language.this",
+
+				// Markdown: punctuation, such as ##, **, _, etc...
+				"text.html.markdown meta.paragraph punctuation",
+				"text.html.markdown markup.heading punctuation"
 			],
 			"settings": {
 				"foreground": "#FF9945"
