@@ -1,0 +1,22 @@
+{
+  "name": "trailscasts",
+  "displayName": "trailscasts",
+  "description": "Trailscasts",
+  "version": "1.0.0",
+  "publisher": "msafi",
+  "engines": {
+    "vscode": "^1.15.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Trailscasts",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Trailscasts-color-theme.json"
+      }
+    ]
+  }
+}

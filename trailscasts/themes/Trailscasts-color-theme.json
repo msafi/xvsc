@@ -6,7 +6,7 @@
 		"editor.foreground": "#E6E1DC",
 		"activityBarBadge.background": "#007acc",
 		"sideBarTitle.foreground": "#bbbbbb",
-		"editor.lineHighlightBackground": "#333435"
+		"editor.lineHighlightBackground": "#131414"
 	},
 	"tokenColors": [
 		{
@@ -32,7 +32,7 @@
 				"constant.numeric" // Numbers
 			],
 			"settings": {
-				"foreground": "#A5C261"
+				"foreground": "#C2E07CD3"
 			}
 		},
 		{
@@ -45,7 +45,10 @@
 				"storage",
 
 				// JavaScript: true, false
-				"constant.language"
+				"constant.language",
+
+				// JavaScript: this
+				"variable.language.this"
 			],
 			"settings": {
 				"foreground": "#FF9945"
@@ -63,19 +66,12 @@
 		},
 		{
 			"name": "Yellow",
-			"scope": [				
-				"meta.tag",
-				"declaration.tag",
-				"entity.name.tag",
-				"markup.deleted.git_gutter",
-				"entity.other.attribute-name",
-				"meta.definition.method entity.name.function",
-				"entity.name.function",
-				"meta.function-call",
-				"variable.function",
-				"support.function",
-				"punctuation.definition.string",
-				"meta.class-method entity.name.function"
+			"scope": [	
+				// JavaScript: function call			
+				"entity",
+
+				// JavaScript: built-in functions
+				"support.function"
 			],
 			"settings": {
 				"foreground": "#E8BF6A"
@@ -95,9 +91,19 @@
 		{
 			"name": "Offwhite",
 			"scope": [
-				"meta.object-literal.key",
+				"meta",
+
+				// JavaScript: object properties
 				"variable.other.property",
-				"constant"
+
+				"constant",
+
+				// JavaScript: built-in methods
+				"support",
+
+				// JavaScript: jsDoc @param
+				"punctuation.definition.block.tag.jsdoc",
+				"storage.type.class.jsdoc"
 			],
 			"settings": {
 				"foreground": "#D0D0FF"
