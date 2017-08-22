@@ -170,7 +170,7 @@ The `pipe` function must return one of the following: `false`, `string`, or `obj
 Return `false` to reject the new conformed value and keep the input field from changing.
 
 If the `pipe` modifies the string without adding new characters, for example, changing letter capitalization or removing
-characters, it should return the modified string. 
+characters, it should return the modified string.
 
 If the `pipe` adds new characters to the string, it must return an object with the following keys:
 

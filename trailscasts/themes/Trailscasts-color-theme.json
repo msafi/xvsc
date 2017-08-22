@@ -78,9 +78,15 @@
 		},
 		{
 			"name": "Yellow",
-			"scope": [	
+			"scope": [
+				// HTML: tag
+				"meta.tag",
+
 				// JavaScript: function call			
-				"entity",
+				"meta.function-call",
+
+				// JavaScript: function declarations/expressions
+				"entity.name.function",
 
 				// JavaScript: built-in functions
 				"support.function"
