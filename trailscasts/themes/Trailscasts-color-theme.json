@@ -2,7 +2,7 @@
 	"name": "Trailscasts",
 	"type": "dark",
 	"colors": {
-		"editor.background": "#000000",
+		"editor.background": "#000000AE",
 		"editor.foreground": "#E6E1DC",
 		"activityBarBadge.background": "#007acc",
 		"sideBarTitle.foreground": "#bbbbbb",
