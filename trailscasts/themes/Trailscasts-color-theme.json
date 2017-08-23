@@ -25,7 +25,7 @@
 				"markup.underline"
 			],
 			"settings": {
-				"foreground": "#7CBFBF"
+				"foreground": "#98CDCD"
 			}
 		},
 		{
@@ -40,7 +40,7 @@
 				"markup.inline.raw"								
 			],
 			"settings": {
-				"foreground": "#C2E07CD3"
+				"foreground": "#A5C261"
 			}
 		},
 		{
@@ -82,6 +82,9 @@
 				// HTML: tag
 				"meta.tag",
 
+				// JSX/TSX: classes
+				"meta.tag support",
+
 				// JavaScript: function call			
 				"meta.function-call",
 
@@ -104,6 +107,17 @@
 			],
 			"settings": {
 				"foreground": "#FFFFFF"
+			}
+		},
+		{
+			"name": "Light yellow, underline",
+			"scope": [
+				"meta.definition.property entity.name.function",
+				"meta.definition.method entity.name.function"
+			],
+			"settings": {
+				"fontStyle": "underline",
+				"foreground": "#E7D1A1"
 			}
 		},
 		{
