@@ -6,7 +6,8 @@
 		"editor.foreground": "#E6E1DC",
 		"activityBarBadge.background": "#007acc",
 		"sideBarTitle.foreground": "#bbbbbb",
-		"editor.lineHighlightBackground": "#131414"
+		"editor.lineHighlightBackground": "#131414",
+		"statusBar.background" : "#303030"
 	},
 	"tokenColors": [
 		{

@@ -1,0 +1,73 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "ctrl+;",
+    "command": "extension.aceJump"
+  },
+  {
+    "key": "cmd+=",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "cmd+-",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "alt+down",
+    "command": "editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+up",
+    "command": "editor.action.smartSelect.grow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "scrollLineDown"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "scrollLineUp"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.focusNextGroup"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.focusPreviousGroup"
+  },
+  {
+    "key": "shift+enter",
+    "command": "editor.action.insertLineAfter"
+  },
+  {
+    "key": "cmd+shift+s",
+    "command": "workbench.action.splitEditor"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "editor.action.moveLinesUpAction"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "editor.action.moveLinesDownAction"
+  },
+  {
+    "key": "cmd+d",
+    "command": "editor.action.deleteLines"
+  },
+  {
+    "key": "cmd+shift+d",
+    "command": "editor.action.copyLinesDownAction"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.quickOpen"
+  }
+]

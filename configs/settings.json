@@ -1,0 +1,10 @@
+{
+    "window.zoomLevel": 0,
+    "editor.fontSize": 15,
+    "editor.fontFamily": "'Andale Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.renderIndentGuides": true,
+    "workbench.colorTheme": "Trailscasts",
+    "editor.tabSize": 2,
+    "window.openFoldersInNewWindow": "on",
+    "window.openFilesInNewWindow": "on"
+}
