@@ -69,5 +69,44 @@
   {
     "key": "ctrl+o",
     "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "editor.action.goToDeclaration",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile"
+  },
+  {
+    "key": "shift+cmd+n",
+    "command": "explorer.newFolder"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "editor.action.showHover"
+  },
+  {
+    "key": "shift+f6",
+    "command": "editor.action.changeAll",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+f6",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   }
 ]

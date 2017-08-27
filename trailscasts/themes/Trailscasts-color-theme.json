@@ -111,14 +111,14 @@
 			}
 		},
 		{
-			"name": "Light yellow, underline",
+			"name": "Light green, underline",
 			"scope": [
 				"meta.definition.property entity.name.function",
 				"meta.definition.method entity.name.function"
 			],
 			"settings": {
 				"fontStyle": "underline",
-				"foreground": "#E7D1A1"
+				"foreground": "#C0C05C"
 			}
 		},
 		{
