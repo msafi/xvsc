@@ -1,0 +1,30 @@
+{
+  "($params) => ...": {
+    "prefix": ">",
+    "body": [
+      "(${1:params}) => {",
+      "  $0",
+      "}"
+    ]
+  },
+  "function($params) {...}": {
+    "prefix": "function",
+    "body": [
+      "function(${1:params}) {",
+      "  $0",
+      "}"
+    ]
+  },
+  "console.log": {
+    "prefix": "cll",
+    "body": "console.log($0)"
+  },
+  "console.log('$name', $name)": {
+    "prefix": "cl",
+    "body": "console.log('${1:name}', ${1:name})$0"
+  },
+  "console.log('=\nFILE: $fileName$\nLINE: $lineNumber$\n=')": {
+    "prefix": "cld",
+    "body": "console.log('=\\nFILE: $TM_FILENAME\\nLINE: $TM_LINE_NUMBER\\n=')"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "xvscode-snippets",
+  "displayName": "xvscode-snippets",
+  "description": "xvscode snippets",
+  "version": "0.0.1",
+  "publisher": "msafi",
+  "engines": {
+    "vscode": "^1.15.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      { "language": "javascript", "path": "./snippets/snippets.json" },
+      { "language": "typescript", "path": "./snippets/snippets.json" }
+    ]
+  }
+}

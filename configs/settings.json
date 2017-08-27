@@ -1,13 +1,13 @@
 {
-    "window.zoomLevel": -0.6,
-    "editor.fontSize": 17,
-    "editor.fontFamily": "'Andale Mono', Menlo, Monaco, 'Courier New', monospace",
-    "editor.renderIndentGuides": true,
-    "workbench.colorTheme": "Trailscasts",
-    "editor.tabSize": 2,
-    "window.openFoldersInNewWindow": "on",
-    "window.openFilesInNewWindow": "on",
-    "editor.minimap.enabled": false,
-    "explorer.openEditors.visible": 0,
-    "workbench.startupEditor": "newUntitledFile"
+  "window.zoomLevel": -0.6,
+  "editor.fontSize": 17,
+  "editor.fontFamily": "'Andale Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.renderIndentGuides": true,
+  "workbench.colorTheme": "Trailscasts",
+  "editor.tabSize": 2,
+  "window.openFoldersInNewWindow": "on",
+  "window.openFilesInNewWindow": "on",
+  "editor.minimap.enabled": false,
+  "explorer.openEditors.visible": 0,
+  "workbench.startupEditor": "newUntitledFile"
 }

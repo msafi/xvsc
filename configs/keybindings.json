@@ -108,5 +108,17 @@
     "key": "ctrl+shift+f6",
     "command": "editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+s",
+    "command": "workbench.action.files.saveAll"
+  },
+  {
+    "key": "cmd+j",
+    "command": "insertSnippet"
   }
 ]
