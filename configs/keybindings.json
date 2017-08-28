@@ -120,5 +120,9 @@
   {
     "key": "cmd+j",
     "command": "insertSnippet"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "xvscm.openInSourceTree"
   }
 ]

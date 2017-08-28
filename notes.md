@@ -13,6 +13,7 @@ The following is the functionality that I need to add to VS Code to bring it to 
 - [ ] Change default split to horizontal [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33102)
 - [ ] Navigate files in Explorer by typing [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33109)
 - [ ] Semantic syntax highlighting [*BLOCKED*](https://github.com/Microsoft/vscode/issues/585)
+- [X] Open Source Tree to current repo
 - [X] Change matching bracket highlighting to just be a color instead of a border
 - [X] Save all files. On IntelliJ, CMD+S did that
 - [X] Add my live templates: console.logging, creating functions, etc
