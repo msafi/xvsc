@@ -9,5 +9,6 @@
   "window.openFilesInNewWindow": "on",
   "editor.minimap.enabled": false,
   "explorer.openEditors.visible": 0,
-  "workbench.startupEditor": "newUntitledFile"
+"workbench.startupEditor": "newUntitledFile",
+"editor.multiCursorModifier": "ctrlCmd"
 }
