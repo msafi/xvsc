@@ -12,5 +12,6 @@
   "workbench.startupEditor": "newUntitledFile",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.detectIndentation": false,
-  "window.newWindowDimensions": "inherit"
+  "window.newWindowDimensions": "inherit",
+  "editor.rulers": [100]
 }

@@ -1,159 +1,145 @@
 {
-	"name": "Trailscasts",
-	"type": "dark",
-	"colors": {
-		"editor.background": "#000000AE",
-		"editor.foreground": "#E6E1DC",
-		"activityBarBadge.background": "#007acc",
-		"sideBarTitle.foreground": "#bbbbbb",
-		"editor.lineHighlightBackground": "#131414",
-		"statusBar.background" : "#303030",
-		"editorBracketMatch.background": "#3344F09E",
-		"editorBracketMatch.border": "#3344F09E"
-	},
-	"tokenColors": [
-		{
-			"settings": {
-				"foreground": "#E6E1DC",
-				"background": "#000000",
-				"lineHighlight": "#333435"
-			}
-		},
-		{
-			"name": "Cyan",
-			"scope": [
-				"variable",
-
-				// Markdown: link
-				"markup.underline"
-			],
-			"settings": {
-				"foreground": "#98CDCD"
-			}
-		},
-		{
-			"name": "Green",
-			"scope": [
-				"string",
-
-				// JavaScript: numbers
-				"constant.numeric",
-
-				// Markdown: stuff between tick marks, i.e. `stuff`
-				"markup.inline.raw"								
-			],
-			"settings": {
-				"foreground": "#A5C261"
-			}
-		},
-		{
-			"name": "Orange",
-			"scope": [
-				// JavaScript: return, export, yield
-				"keyword",
-
-				// JavaScript: let, var, const
-				"storage",
-
-				// JavaScript: true, false
-				"constant.language",
-
-				// JavaScript: this
-				"variable.language.this",
-
-				// Markdown: punctuation, such as ##, **, _, etc...
-				"text.html.markdown meta.paragraph punctuation",
-				"text.html.markdown markup.heading punctuation"
-			],
-			"settings": {
-				"foreground": "#FF9945"
-			}
-		},
-		{
-			"name": "White and underlined",
-			"scope": [
-				"variable.parameter"
-			],
-			"settings": {
-				"fontStyle": "underline",
-				"foreground": "#FFFFFF"
-			}
-		},
-		{
-			"name": "Yellow",
-			"scope": [
-				// HTML: tag
-				"meta.tag",
-
-				// JSX/TSX: classes
-				"meta.tag support",
-
-				// JavaScript: function call			
-				"meta.function-call",
-
-				// JavaScript: function declarations/expressions
-				"entity.name.function",
-
-				// JavaScript: built-in functions
-				"support.function"
-			],
-			"settings": {
-				"foreground": "#E8BF6A"
-			}
-		},
-		{
-			"name": "White",
-			"scope": [
-				"meta.brace.round",
-				"meta.jsx.children",
-				"punctuation"
-			],
-			"settings": {
-				"foreground": "#FFFFFF"
-			}
-		},
-		{
-			"name": "Light green, underline",
-			"scope": [
-				"meta.definition.property entity.name.function",
-				"meta.definition.method entity.name.function"
-			],
-			"settings": {
-				"fontStyle": "underline",
-				"foreground": "#C0C05C"
-			}
-		},
-		{
-			"name": "Offwhite",
-			"scope": [
-				"meta",
-
-				// JavaScript: object properties
-				"variable.other.property",
-
-				"constant",
-
-				// JavaScript: built-in methods
-				"support",
-
-				// JavaScript: jsDoc @param
-				"punctuation.definition.block.tag.jsdoc",
-				"storage.type.class.jsdoc"
-			],
-			"settings": {
-				"foreground": "#D0D0FF"
-			}
-		},
-		{
-			"name": "Brown, italic",
-			"scope": [
-				"comment",
-				"punctuation.definition.comment"
-			],
-			"settings": {
-				"fontStyle": "italic",
-				"foreground": "#BC9458"
-			}
-		}
-	]
+  "name": "Trailscasts",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#000000AE",
+    "editor.foreground": "#E6E1DC",
+    "activityBarBadge.background": "#007acc",
+    "sideBarTitle.foreground": "#bbbbbb",
+    "editor.lineHighlightBackground": "#131414",
+    "statusBar.background": "#303030",
+    "editorBracketMatch.background": "#3344F09E",
+    "editorBracketMatch.border": "#3344F09E",
+    "editorRuler.foreground": "#FFFFFF24"
+  },
+  "tokenColors": [
+    {
+      "settings": {
+        "foreground": "#E6E1DC",
+        "background": "#000000",
+        "lineHighlight": "#333435"
+      }
+    },
+    {
+      "name": "Cyan",
+      "scope": [
+        "variable",
+        // Markdown: link
+        "markup.underline"
+      ],
+      "settings": {
+        "foreground": "#98CDCD"
+      }
+    },
+    {
+      "name": "Green",
+      "scope": [
+        "string",
+        // JavaScript: numbers
+        "constant.numeric",
+        // Markdown: stuff between tick marks, i.e. `stuff`
+        "markup.inline.raw"
+      ],
+      "settings": {
+        "foreground": "#A5C261"
+      }
+    },
+    {
+      "name": "Orange",
+      "scope": [
+        // JavaScript: return, export, yield
+        "keyword",
+        // JavaScript: let, var, const
+        "storage",
+        // JavaScript: true, false
+        "constant.language",
+        // JavaScript: this
+        "variable.language.this",
+        // Markdown: punctuation, such as ##, **, _, etc...
+        "text.html.markdown meta.paragraph punctuation",
+        "text.html.markdown markup.heading punctuation"
+      ],
+      "settings": {
+        "foreground": "#FF9945"
+      }
+    },
+    {
+      "name": "White and underlined",
+      "scope": [
+        "variable.parameter"
+      ],
+      "settings": {
+        "fontStyle": "underline",
+        "foreground": "#FFFFFF"
+      }
+    },
+    {
+      "name": "Yellow",
+      "scope": [
+        // HTML: tag
+        "meta.tag",
+        // JSX/TSX: classes
+        "meta.tag support",
+        // JavaScript: function call			
+        "meta.function-call",
+        // JavaScript: function declarations/expressions
+        "entity.name.function",
+        // JavaScript: built-in functions
+        "support.function"
+      ],
+      "settings": {
+        "foreground": "#E8BF6A"
+      }
+    },
+    {
+      "name": "White",
+      "scope": [
+        "meta.brace.round",
+        "meta.jsx.children",
+        "punctuation"
+      ],
+      "settings": {
+        "foreground": "#FFFFFF"
+      }
+    },
+    {
+      "name": "Light green, underline",
+      "scope": [
+        "meta.definition.property entity.name.function",
+        "meta.definition.method entity.name.function"
+      ],
+      "settings": {
+        "fontStyle": "underline",
+        "foreground": "#C0C05C"
+      }
+    },
+    {
+      "name": "Offwhite",
+      "scope": [
+        "meta",
+        // JavaScript: object properties
+        "variable.other.property",
+        "constant",
+        // JavaScript: built-in methods
+        "support",
+        // JavaScript: jsDoc @param
+        "punctuation.definition.block.tag.jsdoc",
+        "storage.type.class.jsdoc"
+      ],
+      "settings": {
+        "foreground": "#D0D0FF"
+      }
+    },
+    {
+      "name": "Brown, italic",
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
+      "settings": {
+        "fontStyle": "italic",
+        "foreground": "#BC9458"
+      }
+    }
+  ]
 }
