@@ -134,5 +134,9 @@
     "key": "ctrl+backspace",
     "command": "deleteWordRight",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+cmd+enter",
+    "command": "workbench.action.keepEditor"
   }
 ]
