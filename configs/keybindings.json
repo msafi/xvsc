@@ -124,5 +124,10 @@
   {
     "key": "ctrl+t",
     "command": "xvscm.openInSourceTree"
+  },
+  {
+    "key": "shift+backspace",
+    "command": "xvscm.deleteToTextBeginning",
+    "when": "editorTextFocus"
   }
 ]

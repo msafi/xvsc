@@ -11,16 +11,18 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:xvscm.openInSourceTree"
+    "onCommand:xvscm.openInSourceTree",
+    "onCommand:xvscm.deleteToTextBeginning"
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "commands": [
-      {
-        "command": "xvscm.openInSourceTree",
-        "title": "Open current git repo in SourceTree"
-      }
-    ]
+    "commands": [{
+      "command": "xvscm.openInSourceTree",
+      "title": "Open current git repo in SourceTree"
+    }, {
+      "command": "xvscm.deleteToTextBeginning",
+      "title": "Delete to the first non-whitespace character"
+    }]
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",

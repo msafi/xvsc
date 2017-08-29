@@ -11,5 +11,6 @@
   "explorer.openEditors.visible": 0,
   "workbench.startupEditor": "newUntitledFile",
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.detectIndentation": false
+  "editor.detectIndentation": false,
+  "window.newWindowDimensions": "inherit"
 }

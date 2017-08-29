@@ -7,6 +7,7 @@ The following is the functionality that I need to add to VS Code to bring it to 
 - [ ] Find/replace keyboard shortcut for entire project and for open file
 - [ ] Search jump feature, like Ace Jump on IntelliJ
 - [ ] Get Emmet to work
+- [ ] Change color of destructured/renamed, property
 - [ ] Navigate through occurrences. In IntelliJ that's CMD+SHIFT+Up or down arrow
 - [ ] Autocomplete based on surrounding words. On IntelliJ, that's CTRL+L
 - [ ] Ability to fold markdown links *INVESTIGATE*
