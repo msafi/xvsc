@@ -129,5 +129,10 @@
     "key": "shift+backspace",
     "command": "xvscm.deleteToTextBeginning",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "deleteWordRight",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]

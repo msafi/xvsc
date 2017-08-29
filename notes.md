@@ -3,7 +3,6 @@
 The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
 
 - [ ] Spell check text
-- [ ] Delete all white space ahead keyboard shortcut. On IntelliJ that's CTRL+Backspace
 - [ ] Find/replace keyboard shortcut for entire project and for open file
 - [ ] Search jump feature, like Ace Jump on IntelliJ
 - [ ] Get Emmet to work
@@ -14,6 +13,7 @@ The following is the functionality that I need to add to VS Code to bring it to 
 - [ ] Change default split to horizontal [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33102)
 - [ ] Navigate files in Explorer by typing [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33109)
 - [ ] Semantic syntax highlighting [*BLOCKED*](https://github.com/Microsoft/vscode/issues/585)
+- [X] Delete all white space ahead keyboard shortcut. On IntelliJ that's CTRL+Backspace
 - [X] Open Source Tree to current repo
 - [X] Change matching bracket highlighting to just be a color instead of a border
 - [X] Save all files. On IntelliJ, CMD+S did that
