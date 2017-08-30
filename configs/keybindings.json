@@ -141,10 +141,10 @@
   },
   {
     "key": "cmd+ctrl+down",
-    "command": "findWordAtCaret.next"
+    "command": "findWordAtCursor.next"
   },
   {
     "key": "cmd+ctrl+up",
-    "command": "findWordAtCaret.previous"
+    "command": "findWordAtCursor.previous"
   }
 ]

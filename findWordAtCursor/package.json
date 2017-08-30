@@ -1,6 +1,6 @@
 {
     "name": "find-word-at-cursor",
-    "displayName": "find-word-at-cursor",
+    "displayName": "Find Word At Cursor",
     "description": "Move cursor to the next occurrence of word at cursor",
     "version": "1.8.0",
     "repository": {
