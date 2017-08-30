@@ -3,6 +3,9 @@
 The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
 
 - [ ] Spell check text
+- [ ] Add personal ESLint, TSLint, and possibly prettier
+- [ ] Go to last edit location
+- [ ] Move through tabs of current editor group only
 - [ ] Create a repl
 - [ ] Set title bar active and inactive colors https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors-macos
 - [ ] Copy line keyboard shortcut. cmd+c on IntelliJ.
