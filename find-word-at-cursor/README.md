@@ -1,14 +1,13 @@
-# find-word-at-caret
+# find-word-at-cursor
 
-This VS Code extension provides the same functionality as IntelliJ's [Find Word At Caret](https://www.jetbrains.com/help/idea/finding-word-at-caret.html).
+This extension lets you quickly find the next word in the document that matches the current word under your cursor. It also works with a highlighted selection.
 
-It lets you quickly find the next word in the document that matches the current word under your
-cursor. It also works with a selection that spans multiple words.
+This extension provides the same functionality as IntelliJ's [Find Word At Caret](https://www.jetbrains.com/help/idea/finding-word-at-caret.html).
 
 <table>
 	<thead>
 		<tr>
-			<th>Find word at caret</th>
+			<th>Find word at cursor</th>
 			<th>Find selection</th>
 		</tr>
 	</thead>

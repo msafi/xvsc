@@ -1,7 +1,7 @@
 {
-  "name": "find-word-at-caret",
-  "displayName": "find-word-at-caret",
-  "description": "Move caret to the next occurrence of word at caret",
+  "name": "find-word-at-cursor",
+  "displayName": "find-word-at-cursor",
+  "description": "Move cursor to the next occurrence of word at cursor",
   "version": "0.0.1",
   "publisher": "msafi",
   "engines": {
@@ -11,19 +11,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:findWordAtCaret.next",
-    "onCommand:findWordAtCaret.previous"
+    "onCommand:findWordAtCursor.next",
+    "onCommand:findWordAtCursor.previous"
   ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
       {
-        "command": "findWordAtCaret.next",
-        "title": "Find next word at caret"
+        "command": "findWordAtCursor.next",
+        "title": "Find next word at cursor"
       },
       {
-        "command": "findWordAtCaret.previous",
-        "title": "Find previous word at caret"
+        "command": "findWordAtCursor.previous",
+        "title": "Find previous word at cursor"
       }
     ]
   },

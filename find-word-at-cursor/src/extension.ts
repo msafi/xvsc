@@ -1,10 +1,10 @@
 import {commands, ExtensionContext} from 'vscode';
-import {next, previous, eventRegistrations} from './findWordAtCaret'
+import {next, previous, eventRegistrations} from './findWordAtCursor'
 
 export function activate(context: ExtensionContext) {
   context.subscriptions.push(
-    commands.registerTextEditorCommand('findWordAtCaret.next', next),
-    commands.registerTextEditorCommand('findWordAtCaret.previous', previous),
+    commands.registerTextEditorCommand('findWordAtCursor.next', next),
+    commands.registerTextEditorCommand('findWordAtCursor.previous', previous),
   );
 }
 

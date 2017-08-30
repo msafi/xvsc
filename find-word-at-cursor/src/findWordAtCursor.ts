@@ -36,15 +36,15 @@ function _scan(reverse = false) {
   if (isMultiLine) { return }
 
   const isMultiCharSelection = end.line !== start.line || end.character !== start.character
-  const wordAtCaretRange = isMultiCharSelection
+  const wordAtCursorRange = isMultiCharSelection
     ? new Range(start, end)
     : document.getWordRangeAtPosition(end, /\w+/g)
 
-  if (wordAtCaretRange === undefined) { return }
+  if (wordAtCursorRange === undefined) { return }
 
-  const wordAtCaret = document.getText(wordAtCaretRange)
+  const wordAtCursor = document.getText(wordAtCursorRange)
 
-  if (!wordAtCaret.length) { return }
+  if (!wordAtCursor.length) { return }
 
   for(
     let i = end.line;
@@ -52,9 +52,9 @@ function _scan(reverse = false) {
     reverse ? i-- : i++
   ) {
     const nextIndexInLine = _findIndexInLine(
-      wordAtCaret,
+      wordAtCursor,
       document.lineAt(i),
-      (i === end.line) ? wordAtCaretRange[reverse ? 'start' : 'end'].character : 0,
+      (i === end.line) ? wordAtCursorRange[reverse ? 'start' : 'end'].character : 0,
       reverse,
       isMultiCharSelection,
       i,
@@ -63,7 +63,7 @@ function _scan(reverse = false) {
 
     if (nextIndexInLine !== -1) {
       const wordSelection = isMultiCharSelection ?
-        _createSelection(i, nextIndexInLine, i, nextIndexInLine + wordAtCaret.length) :
+        _createSelection(i, nextIndexInLine, i, nextIndexInLine + wordAtCursor.length) :
         _createSelection(i, nextIndexInLine)
 
       activeTextEditor.selection = wordSelection
