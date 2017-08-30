@@ -11,18 +11,18 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:findWordAtCaret.findNext",
-    "onCommand:findWordAtCaret.findPrevious",
+    "onCommand:findWordAtCaret.next",
+    "onCommand:findWordAtCaret.previous"
   ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
       {
-        "command": "findWordAtCaret.findNext",
+        "command": "findWordAtCaret.next",
         "title": "Find next word at caret"
       },
       {
-        "command": "findWordAtCaret.findPrevious",
+        "command": "findWordAtCaret.previous",
         "title": "Find previous word at caret"
       }
     ]

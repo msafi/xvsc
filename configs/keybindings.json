@@ -138,5 +138,13 @@
   {
     "key": "ctrl+cmd+enter",
     "command": "workbench.action.keepEditor"
+  },
+  {
+    "key": "cmd+ctrl+down",
+    "command": "findWordAtCaret.next"
+  },
+  {
+    "key": "cmd+ctrl+up",
+    "command": "findWordAtCaret.previous"
   }
 ]

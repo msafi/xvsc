@@ -3,6 +3,7 @@
 The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
 
 - [ ] Spell check text
+- [ ] Copy line keyboard shortcut. cmd+c on IntelliJ.
 - [ ] Show marker of width
 - [ ] Find/replace keyboard shortcut for entire project and for open file
 - [ ] Search jump feature, like Ace Jump on IntelliJ
