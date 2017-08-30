@@ -10,7 +10,7 @@
   "editor.minimap.enabled": false,
   "explorer.openEditors.visible": 0,
   "workbench.startupEditor": "newUntitledFile",
-  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.multiCursorModifier": "alt",
   "editor.detectIndentation": false,
   "window.newWindowDimensions": "inherit",
   "editor.rulers": [100]
