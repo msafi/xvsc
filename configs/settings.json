@@ -13,5 +13,8 @@
   "editor.multiCursorModifier": "alt",
   "editor.detectIndentation": false,
   "window.newWindowDimensions": "inherit",
-  "editor.rulers": [100]
+  "editor.rulers": [
+    100
+  ],
+  "files.trimTrailingWhitespace": true
 }

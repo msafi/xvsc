@@ -3,6 +3,8 @@
 The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
 
 - [ ] Spell check text
+- [ ] Create a repl
+- [ ] Set title bar active and inactive colors https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors-macos
 - [ ] Copy line keyboard shortcut. cmd+c on IntelliJ.
 - [ ] Show marker of width
 - [ ] Find/replace keyboard shortcut for entire project and for open file
