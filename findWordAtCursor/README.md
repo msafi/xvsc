@@ -15,9 +15,9 @@ This extension adds two new commands:
 * `findWordAtCursor.next`: moves the caret to the next word or selection under it
 * `findWordAtCursor.previous`: moves the caret to previous word or selection under it
 
+**Note** No keybinding is provided by this extension. You have to create one yourself.
+
 On my Mac system, I've mapped these two commands to:
 
 * `cmd+ctrl+down` for `findWordAtCursor.next`
 * `cmd+ctrl+up` for `findWordAtCursor.previous`
-
-Feel free to create a similar mapping in your system.
