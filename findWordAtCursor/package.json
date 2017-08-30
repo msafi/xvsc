@@ -1,43 +1,47 @@
 {
-  "name": "find-word-at-cursor",
-  "displayName": "find-word-at-cursor",
-  "description": "Move cursor to the next occurrence of word at cursor",
-  "version": "0.0.1",
-  "publisher": "msafi",
-  "engines": {
-    "vscode": "^1.15.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:findWordAtCursor.next",
-    "onCommand:findWordAtCursor.previous"
-  ],
-  "main": "./out/src/extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "findWordAtCursor.next",
-        "title": "Find next word at cursor"
-      },
-      {
-        "command": "findWordAtCursor.previous",
-        "title": "Find previous word at cursor"
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "typescript": "^2.0.3",
-    "vscode": "^1.0.0",
-    "mocha": "^2.3.3",
-    "@types/node": "^6.0.40",
-    "@types/mocha": "^2.2.32"
-  }
+    "name": "find-word-at-cursor",
+    "displayName": "find-word-at-cursor",
+    "description": "Move cursor to the next occurrence of word at cursor",
+    "version": "1.6.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/msafi/xvscode/tree/master/findWordAtCursor"
+    },
+    "publisher": "mksafi",
+    "engines": {
+        "vscode": "^1.15.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:findWordAtCursor.next",
+        "onCommand:findWordAtCursor.previous"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "findWordAtCursor.next",
+                "title": "Find next word at cursor"
+            },
+            {
+                "command": "findWordAtCursor.previous",
+                "title": "Find previous word at cursor"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    }
 }

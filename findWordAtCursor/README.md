@@ -4,20 +4,9 @@ This extension lets you quickly find the next word in the document that matches 
 
 This extension provides the same functionality as IntelliJ's [Find Word At Caret](https://www.jetbrains.com/help/idea/finding-word-at-caret.html).
 
-<table>
-	<thead>
-		<tr>
-			<th>Find word at cursor</th>
-			<th>Find selection</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><img src="demoFiles/wordDemo.gif"/></td>
-      <td><img src="demoFiles/selectionDemo.gif"/></td>
-		</tr>
-	</tbody>
-</table>
+|Find word at cursor|Find selection|
+|---|---|
+|![](https://raw.githubusercontent.com/msafi/xvscode/master/findWordAtCursor/demoFiles/wordDemo.gif)|![](https://raw.githubusercontent.com/msafi/xvscode/master/findWordAtCursor/demoFiles/selectionDemo.gif)|
 
 ## Extension Settings
 
