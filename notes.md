@@ -2,23 +2,25 @@
 
 The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
 
-- [ ] Spell check text
 - [ ] Add personal ESLint, TSLint, and possibly prettier
+- [ ] Continue comment on new line
+- [ ] Make sure when typing
 - [ ] Go to last edit location
 - [ ] Move through tabs of current editor group only
 - [ ] Create a repl
 - [ ] Set title bar active and inactive colors https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors-macos
 - [ ] Copy line keyboard shortcut. cmd+c on IntelliJ.
-- [ ] Show marker of width
 - [ ] Find/replace keyboard shortcut for entire project and for open file
 - [ ] Search jump feature, like Ace Jump on IntelliJ
 - [ ] Get Emmet to work
 - [ ] Change color of destructured/renamed, property
-- [ ] Navigate through occurrences. In IntelliJ that's CMD+SHIFT+Up or down arrow
 - [ ] Autocomplete based on surrounding words. On IntelliJ, that's CTRL+L
 - [ ] Ability to fold markdown links *INVESTIGATE*
 - [ ] Navigate files in Explorer by typing [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33109)
 - [ ] Semantic syntax highlighting [*BLOCKED*](https://github.com/Microsoft/vscode/issues/585)
+- [X] Navigate through occurrences. In IntelliJ that's CMD+SHIFT+Up or down arrow
+- [X] Show marker of width
+- [X] Spell check text
 - [X] Change default split to horizontal [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33102)
 - [X] Delete all white space ahead keyboard shortcut. On IntelliJ that's CTRL+Backspace
 - [X] Open Source Tree to current repo

@@ -16,5 +16,10 @@
   "editor.rulers": [
     100
   ],
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "cSpell.userWords": [
+    "decrementing",
+    "destructured"
+  ],
+  "editor.formatOnPaste": true
 }

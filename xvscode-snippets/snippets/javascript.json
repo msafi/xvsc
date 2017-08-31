@@ -2,16 +2,14 @@
   "($params) => ...": {
     "prefix": ">",
     "body": [
-      "(${1:params}) => {",
-      "  $0",
+      "($0) => {",
       "}"
     ]
   },
   "function($params) {...}": {
     "prefix": "function",
     "body": [
-      "function(${1:params}) {",
-      "  $0",
+      "function($0) {",
       "}"
     ]
   },
