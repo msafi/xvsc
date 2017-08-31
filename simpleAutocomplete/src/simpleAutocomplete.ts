@@ -66,8 +66,19 @@ export class SimpleAutocomplete {
         if (nextLineToRead === NextLineToRead.Current) {
           lines.push(document.lineAt(startingLineIndex))
 
-          // After reading the current line, we read the one above.
-          nextLineToRead = NextLineToRead.Higher
+          if (higherLinePointer >= indexOfFirstLine) {
+            // After reading the current line, we first attempt to read a higher line if one is
+            // available.
+            nextLineToRead = NextLineToRead.Higher
+          } else if (lowerLinePointer <= indexOfLastLine) {
+            // If no higher line is available, we attempt to read a lower line next
+            nextLineToRead = NextLineToRead.Lower
+          } else {
+            // If no lower line is available, we break out of the loop because there are no more
+            // lines to read.
+            break
+          }
+
           continue
         }
 
@@ -75,8 +86,15 @@ export class SimpleAutocomplete {
         // line.
         if (nextLineToRead === NextLineToRead.Higher) {
           lines.push(document.lineAt(higherLinePointer))
+
+          // We decrement the higherLinePointer so that next higher line we read is the one above
+          // the one we just read.
           higherLinePointer--
 
+          // Next we check if there are more lower lines we need to read before we proceed. If
+          // there are lower lines, we instruct the do-while loop to read a lower line next.
+          // Otherwise we don't set `nextLineToRead` which in effect causes us to continue reading
+          // higher lines until they are all exhausted.
           if (lowerLinePointer <= indexOfLastLine) {
             nextLineToRead = NextLineToRead.Lower
           }
@@ -84,6 +102,8 @@ export class SimpleAutocomplete {
           continue
         }
 
+        // This `if` block works the same as the `if` block above it except it is for dealing with
+        // lower lines rather than the higher ones.
         if (nextLineToRead === NextLineToRead.Lower) {
           lines.push(document.lineAt(lowerLinePointer))
           lowerLinePointer++
@@ -109,14 +129,6 @@ export class SimpleAutocomplete {
       //   textEditorEdit.insert(activeTextEditor.selection.end, String(this.state++))
       // })
   }
-}
-
-function _inverter(num: number) {
-  return num * -1
-}
-
-function _safeGetLine(index: number, ) {
-
 }
 
 enum NextLineToRead {
