@@ -1,12 +1,13 @@
 import {
   Position,
   TextDocument,
-  TextLine
+  TextLine,
+  Range
 } from 'vscode'
 enum NextLineToRead {
   Current,
   Higher,
-  Lower
+  Lower,
 }
 
 /**

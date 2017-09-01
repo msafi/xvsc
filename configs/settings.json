@@ -21,5 +21,8 @@
     "decrementing",
     "destructured"
   ],
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+  "cSpell.showStatus": false
 }

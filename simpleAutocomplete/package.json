@@ -34,5 +34,10 @@
         "mocha": "^2.3.3",
         "@types/node": "^6.0.40",
         "@types/mocha": "^2.2.32"
+    },
+    "dependencies": {
+        "@types/escape-string-regexp": "0.0.31",
+        "escape-string-regexp": "^1.0.5",
+        "tslint": "^5.7.0"
     }
 }
