@@ -3,6 +3,6 @@ function someFunction(arg) {
 }
 
 const someVariable = 2
-someFunction(someva)
+const somevak = someFunction(someva)
 const ok = 1
 const someVariableFoo = 3
