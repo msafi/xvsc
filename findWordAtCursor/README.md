@@ -1,4 +1,4 @@
-# find-word-at-cursor
+# [Find Word At Cursor](https://marketplace.visualstudio.com/items?itemName=mksafi.find-word-at-cursor)
 
 This extension lets you quickly find the next word in the document that matches the current word under your cursor. It also works with a highlighted selection.
 

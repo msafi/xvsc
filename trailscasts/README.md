@@ -2,4 +2,4 @@
 
 Like Railscasts but brighter and more saturated
 
-![](./screenshot.png)
+![](https://raw.githubusercontent.com/msafi/xvsc/master/trailscasts/screenshot.png)
