@@ -1,9 +1,9 @@
 {
     "name": "trailscasts",
-    "displayName": "trailscasts",
-    "description": "Trailscasts",
+    "displayName": "Trailscasts",
+    "description": "Like Railscasts but brighter and more saturated",
     "version": "1.0.0",
-    "publisher": "msafi",
+    "publisher": "mksafi",
     "engines": {
         "vscode": "^1.15.0"
     },

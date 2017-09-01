@@ -18,7 +18,8 @@
   "files.trimTrailingWhitespace": true,
   "cSpell.userWords": [
     "decrementing",
-    "destructured"
+    "destructured",
+    "repo"
   ],
   "editor.formatOnPaste": true,
   "tslint.enable": true,
