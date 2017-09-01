@@ -24,5 +24,13 @@
   "editor.formatOnPaste": true,
   "tslint.enable": true,
   "tslint.autoFixOnSave": true,
-  "cSpell.showStatus": false
+  "cSpell.showStatus": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.idea": true
+  }
 }
