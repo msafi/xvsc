@@ -114,10 +114,6 @@
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
-    "key": "cmd+s",
-    "command": "workbench.action.files.saveAll"
-  },
-  {
     "key": "cmd+j",
     "command": "insertSnippet"
   },
@@ -166,5 +162,9 @@
   {
     "key": "cmd+k k",
     "command": "workbench.output.action.clearOutput"
+  },
+  {
+    "key": "alt+s",
+    "command": "workbench.action.files.newUntitledFile"
   }
 ]

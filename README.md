@@ -6,38 +6,32 @@ xvsc stands for "extras for vsc".
 
 ## Content
 
-### Trailscasts
+### [Trailscasts](./trailscasts)
 
 A Dark UI theme inspired by Railscasts.
 
-### Find Word At Cursor
+### [Find Word At Cursor](./findWordAtCursor)
 
 Use keyboard shortcuts to jump through occurrences of the word or selection under cursor.
 
-### configs
+### [Simple Autocomplete](./simpleAutocomplete) (under development)
 
-Contains my `keybindings.json` and `settings.json`.
+Fewer keystrokes, no-nonsense autocomplete that cycles through matches based on word fuzzy search performed on the open document(s).
 
-### Simple Autocomplete (under development)
+### [Find-Jump](./findJump) (planned)
 
-Autocomplete functionality based on all words that appear on the document.
+Like Ace Jump but with a flow such as:
 
-### xvscMisc
+Keyboard shortcut ➡ Type a few letters to find matches ➡ Jump
 
-An extension with some quick enhancements I've added to VS Code.
-
-### xvscSnippets
-
-An extension that contains my personal VS Code snippets. (Using an extension for snippets allows for more flexibility than using the snippets folder)
-
-### Find-Jump (planned)
-
-Ace Jump but with keyboard search
-
-### Smarter Selection (planned)
+### [Smarter Selection](./smarterSelection) (planned)
 
 Like VS Code built-in smart selection feature, but with better abstract syntax trees.
 
+### [Configs](./configs), [xvscMisc](./xvscMisc), and [xvscSnippets](./xvscSnippets)
+
+I also put my `settings.json`, `keybindings.json`, and code snippets in this repo. I also have this extension where I put bits and pieces of functionality.
+
 ## License
 
-All code in this repo is public domain. For jurisdictions that don't allow public domain licensing, copyrights is to be determined in a trial by combat.
+All code in this repo is public domain. For jurisdictions that don't allow public domain licensing, interested parties can settle disputes with a trial by combat.

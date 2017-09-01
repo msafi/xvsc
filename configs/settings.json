@@ -9,7 +9,6 @@
   "window.openFilesInNewWindow": "on",
   "editor.minimap.enabled": false,
   "explorer.openEditors.visible": 0,
-  "workbench.startupEditor": "newUntitledFile",
   "editor.multiCursorModifier": "alt",
   "editor.detectIndentation": false,
   "window.newWindowDimensions": "inherit",
