@@ -4,6 +4,7 @@ The following is the functionality that I need to add to VS Code to bring it to 
 
 - [ ] Add personal ESLint, TSLint, and possibly prettier
 - [ ] Continue comment on new line
+- [ ] Improve Open SourceTree extension to make it able to open parent folder git
 - [ ] Make sure when typing
 - [ ] Go to last edit location
 - [ ] Move through tabs of current editor group only

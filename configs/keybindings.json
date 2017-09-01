@@ -154,5 +154,17 @@
   {
     "key": "ctrl+l",
     "command": "simpleAutocomplete.next"
+  },
+  {
+    "key": "ctrl+cmd+n",
+    "command": "code-runner.run"
+  },
+  {
+    "key": "cmd+k k",
+    "command": "workbench.debug.panel.action.clearReplAction"
+  },
+  {
+    "key": "cmd+k k",
+    "command": "workbench.output.action.clearOutput"
   }
 ]
