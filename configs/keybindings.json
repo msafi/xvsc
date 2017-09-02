@@ -144,10 +144,6 @@
     "command": "findWordAtCursor.previous"
   },
   {
-    "key": "cmd+ctrl+up",
-    "command": "findWordAtCursor.previous"
-  },
-  {
     "key": "ctrl+l",
     "command": "simpleAutocomplete.next"
   },

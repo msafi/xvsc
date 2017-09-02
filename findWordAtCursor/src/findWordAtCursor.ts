@@ -195,7 +195,7 @@ function _findIndexInLine(
   // we call `_findIndexInLine` recursively but this time with a new `startSearchAt` that does
   // not include the false positive word.
   if (!isSelectionSearch && indexInLine !== -1) {
-    const detectedWordRange = document.getWordRangeAtPosition(new Position(line, indexInLine))
+    const detectedWordRange = document.getWordRangeAtPosition(new Position(line, indexInLine), /\w+/g)
     const detectedWord = document.getText(detectedWordRange)
 
     if (detectedWord !== word && detectedWordRange !== undefined) {

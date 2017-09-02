@@ -22,6 +22,14 @@
     "hollowverse",
     "repo"
   ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "json"
+  ],
+  "eslint.options": {
+    "no-dupe-keys": true
+  },
   "editor.formatOnPaste": true,
   "tslint.autoFixOnSave": true,
   "cSpell.showStatus": false,
