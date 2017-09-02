@@ -6,9 +6,9 @@ import {
   Selection,
   TextEditor,
   commands
-} from 'vscode';
-import * as assert from 'assert';
-import {simpleAutocomplete} from '../src/extension';
+} from 'vscode'
+import * as assert from 'assert'
+import {simpleAutocomplete} from '../src/extension'
 import * as path from 'path'
 
 try {
@@ -62,10 +62,10 @@ try {
         } catch (e) {
           console.log(e.stacktrace || e)
         }
-      });
+      })
     })
-  });
-} catch(e) {
+  })
+} catch (e) {
   console.log(e.stacktrace || e)
 }
 

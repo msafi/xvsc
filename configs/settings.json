@@ -19,10 +19,10 @@
   "cSpell.userWords": [
     "decrementing",
     "destructured",
+    "hollowverse",
     "repo"
   ],
   "editor.formatOnPaste": true,
-  "tslint.enable": true,
   "tslint.autoFixOnSave": true,
   "cSpell.showStatus": false,
   "files.exclude": {

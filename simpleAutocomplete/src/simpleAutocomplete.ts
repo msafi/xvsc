@@ -32,7 +32,7 @@ export class SimpleAutocomplete {
       isSearching: false,
       higherLinePointer: NaN,
       lowerLinePointer: NaN,
-      upPosition: new Position(0,0),
+      upPosition: new Position(0, 0),
       downPosition: new Position(0, 0),
       matches: []
     }
@@ -82,8 +82,6 @@ export class SimpleAutocomplete {
       // The first lower line we'll read is the one directly below the starting line. Then we'll
       // keep increasing this pointer until we reach the index of the last line in the document.
       this.state.lowerLinePointer = startingLineIndex + 1
-
-
 
       documentScanner(
         document,

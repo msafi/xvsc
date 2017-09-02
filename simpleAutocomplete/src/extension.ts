@@ -1,5 +1,5 @@
-'use strict';
-import * as vscode from 'vscode';
+'use strict'
+import * as vscode from 'vscode'
 import {SimpleAutocomplete} from './simpleAutocomplete'
 
 export const simpleAutocomplete = new SimpleAutocomplete()

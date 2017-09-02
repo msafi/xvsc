@@ -127,5 +127,5 @@ export function documentScanner(
   )
       // console.log(JSON.stringify(this.lines.map(line => line.text), null, 2))
 
-      return {} as any
+  return {} as any
 }
