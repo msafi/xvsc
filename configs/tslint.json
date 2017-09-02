@@ -1,14 +1,67 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:recommended",
+    "tslint-microsoft-contrib",
+    "tslint-eslint-rules",
+    "tslint-config-standard"
+  ],
   "rules": {
-    "no-unused-expression": true,
-    "no-duplicate-variable": true,
-    "no-unused-variable": true,
-    "curly": true,
-    "class-name": true,
-    "semicolon": [
-      "always"
+    "no-relative-imports": false,
+    "typedef": [false],
+    "return-undefined": false,
+    "no-unused-variable": [false],
+    "strict-type-predicates": false,
+    "function-name": false,
+    "no-increment-decrement": false,
+    "no-use-before-declare": false,
+    "no-cookies": false,
+    "await-promise": false,
+    "no-floating-promises": false,
+    "no-for-in-array": false,
+    "promise-function-async": false,
+    "restrict-plus-operands": false,
+    "completed-docs": [false],
+    "match-default-export-name": false,
+    "no-unnecessary-qualifier": false,
+    "no-void-expression": false,
+    "no-unsafe-any": false,
+    "strict-boolean-expressions": false,
+    "missing-jsdoc": false,
+    "trailing-comma": [
+      true
     ],
-    "triple-equals": true
+    "import-name": false,
+    "export-name": false,
+    "no-import-side-effect": false,
+    "misnamed-import": false,
+    "restrict-plus-operand": false,
+    "no-single-line-block-comment": false,
+    "newline-before-return": false,
+    "react-unused-props-and-state": false,
+    "react-tsx-curly-spacing": false,
+    "no-any": false,
+    "jsx-boolean-value": false,
+    "prefer-type-cast": false,
+    "no-reserved-keywords": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "no-var-requires": false,
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "no-console": [
+      false
+    ],
+    "no-require-imports": false,
+    "space-before-function-paren": [true, "never"],
+    "whitespace": [
+      false
+    ],
+    "object-curly-spacing": [true, "never"]
   }
 }

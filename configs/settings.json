@@ -20,18 +20,26 @@
     "decrementing",
     "destructured",
     "hollowverse",
-    "repo"
+    "lockfile",
+    "mksafi",
+    "repo",
+    "tokenized",
+    "tokenizer"
   ],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "json"
   ],
+  "eslint.autoFixOnSave": true,
   "eslint.options": {
-    "no-dupe-keys": true
+    "configFile": "/Users/mk/Code/github/msafi/xvsc/configs/eslintrc.json"
   },
-  "editor.formatOnPaste": true,
+  "eslint.run": "onSave",
+  "tslint.configFile": "/Users/mk/Code/github/msafi/xvsc/configs/tslint.json",
   "tslint.autoFixOnSave": true,
+  "tslint.run": "onSave",
+  "editor.formatOnPaste": true,
   "cSpell.showStatus": false,
   "files.exclude": {
     "**/.git": true,
@@ -40,5 +48,6 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/.idea": true
-  }
+  },
+  "files.insertFinalNewline": true
 }

@@ -1,0 +1,33 @@
+{
+  "name": "xvsc",
+  "version": "1.0.0",
+  "description": "xvsc contains my personal configurations, theme, and the extensions I've developed for VS Code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msafi/xvsc.git"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/msafi/xvsc/issues"
+  },
+  "homepage": "https://github.com/msafi/xvsc#readme",
+  "dependencies": {
+    "eslint": "^4.6.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "tslint": "^5.7.0",
+    "tslint-config-standard": "^6.0.1",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "typescript": "^2.5.2"
+  }
+}

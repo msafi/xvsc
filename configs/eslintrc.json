@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "standard"
+  ],
+  "plugins": [
+    "json"
+  ]
+}

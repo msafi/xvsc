@@ -2,24 +2,23 @@ import {
   window,
   Uri,
   Position,
-  Range,
   Selection,
   TextEditor,
   commands
 } from 'vscode'
 import * as assert from 'assert'
-import {simpleAutocomplete} from '../src/extension'
+import {simpleAutocomplete} from '../../src/extension'
 import * as path from 'path'
 
 try {
   // Defines a Mocha test suite to group tests of similar kind together
-  describe("Simple Autocomplete", () => {
+  describe('Simple Autocomplete', () => {
     let textEditor: TextEditor
 
     describe('activation', () => {
       before(() => {
         return window.showTextDocument(
-          Uri.file(path.join(__dirname, '..', '..', 'test', 'fixtures', 'one.js'))
+          Uri.file(path.join(__dirname, '..', '..', '..', 'test', 'fixtures', 'one.js'))
         ).then((_textEditor) => {
           textEditor = _textEditor
           textEditor.selection = new Selection(new Position(5, 35), new Position(5, 35))
@@ -27,7 +26,7 @@ try {
         })
       })
 
-      it('remembers state', async () => {
+      it('remembers state', async() => {
         const initialState = simpleAutocomplete.state.higherLinePointer
         await commands.executeCommand('simpleAutocomplete.next')
         const stateAfterCommand = simpleAutocomplete.state.higherLinePointer
@@ -35,7 +34,7 @@ try {
         assert(initialState !== stateAfterCommand)
       })
 
-      it('resets state', async () => {
+      it('resets state', async() => {
         await commands.executeCommand('simpleAutocomplete.next')
         const initialState = simpleAutocomplete.state.higherLinePointer
 
@@ -46,13 +45,13 @@ try {
         assert(initialState !== stateAfterReset)
       })
 
-      it.only('sets the needle correctly', async () => {
+      it.only('sets the needle correctly', async() => {
         simpleAutocomplete.setNeedle()
 
         assert(simpleAutocomplete.state.needle === 'someva')
       })
 
-      it.skip("remembers state between `activate` calls", async () => {
+      it.skip('remembers state between `activate` calls', async() => {
         try {
           await commands.executeCommand('simpleAutocomplete.next')
 
@@ -67,10 +66,4 @@ try {
   })
 } catch (e) {
   console.log(e.stacktrace || e)
-}
-
-function _delay(time: number) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, time)
-  })
 }
