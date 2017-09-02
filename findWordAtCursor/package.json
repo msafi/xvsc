@@ -2,7 +2,7 @@
     "name": "find-word-at-cursor",
     "displayName": "Find Word At Cursor",
     "description": "Move cursor to the next occurrence of word at cursor",
-    "version": "1.9.0",
+    "version": "1.10.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/msafi/xvscode/tree/master/findWordAtCursor"
