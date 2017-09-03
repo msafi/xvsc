@@ -1,18 +1,16 @@
-import {
-  TextEditor,
-  window,
-  // TextLine,
-} from 'vscode'
+import {TextEditor} from 'vscode'
 import {documentRippleScanner} from './documentRippleScanner'
-// import {Token, tokenizer} from './tokenizer'
 import {tokenizer} from './tokenizer'
+import {fuzzySearch} from './fuzzySearch'
 
 const wordSeparators = "~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
 
 export class SimpleAutocomplete {
   state: {
     needle: string,
-    nextGenerator: IterableIterator<string> | undefined,
+    nextIterator: IterableIterator<boolean> | undefined,
+    preventReset: boolean,
+    discardedMatches: string[],
   }
 
   constructor() {
@@ -22,61 +20,102 @@ export class SimpleAutocomplete {
     this.reset()
   }
 
-  reset() {
+  public reset() {
+    if (!this.state || this.state.preventReset !== true) {
+      this.forceReset()
+    }
+  }
+
+  public next(activeTextEditor: TextEditor) {
+    if (this.canAutocomplete(activeTextEditor)) {
+      if (!this.state.nextIterator) {
+        this.state.nextIterator = this.nextGenerator(activeTextEditor)
+      }
+
+      const nextResult = this.state.nextIterator.next()
+
+      if (nextResult.done) {
+        this.setMatch(this.state.needle, activeTextEditor).then(this.reset)
+      }
+    } else {
+      this.reset()
+    }
+  }
+
+  private forceReset() {
     this.state = {
       needle: '',
-      nextGenerator: undefined,
+      nextIterator: undefined,
+      preventReset: false,
+      discardedMatches: [],
     }
   }
 
-  setNeedle() {
-    const {activeTextEditor} = window
+  private canAutocomplete(activeTextEditor: TextEditor) {
+    const {selection, document} = activeTextEditor
+    const wordRange = document.getWordRangeAtPosition(selection.end)
 
-    if (activeTextEditor) {
-      const {document} = activeTextEditor
-
-      this.state.needle = document.getText(
-        document.getWordRangeAtPosition(activeTextEditor.selection.end),
-      )
+    if (
+      wordRange === undefined ||
+      wordRange.end.character !== selection.end.character ||
+      selection.start.line !== selection.end.line ||
+      selection.start.character !== selection.end.character
+    ) {
+      return false
+    } else {
+      return true
     }
   }
 
-  *nextGenerator(activeTextEditor: TextEditor) {
-    const documentIterator = documentRippleScanner(
-      activeTextEditor.document,
-      activeTextEditor.selection.end,
-    )
+  private *nextGenerator(activeTextEditor: TextEditor) {
+    this.setNeedle(activeTextEditor)
 
-    let nextLine = documentIterator.next()
+    if (!this.state.needle) {
+      return
+    }
 
-    while(!nextLine.done && nextLine.value !== undefined) {
-      const tokensIterator = tokenizer(nextLine.value.text, wordSeparators)
+    const {document, selection} = activeTextEditor
+    const documentIterator = documentRippleScanner(document, selection.end.line)
+    for (const line of documentIterator) {
+      const tokensIterator = tokenizer(line.text, wordSeparators)
 
-      let nextToken = tokensIterator.next()
-
-      while(!nextToken.done && nextToken.value !== undefined) {
-        console.log(nextToken.value.value)
-        nextToken = tokensIterator.next()
-        yield ''
+      for (const token of tokensIterator) {
+        if (
+          fuzzySearch(this.state.needle.toLowerCase(), token.toLowerCase()) &&
+          this.state.discardedMatches.indexOf(token) === -1
+        ) {
+          this.state.discardedMatches.push(token)
+          this.setMatch(token, activeTextEditor)
+          yield true
+        }
       }
-
-      nextLine = documentIterator.next()
     }
   }
 
-  next(activeTextEditor: TextEditor) {
-    try {
-      if (!this.state.nextGenerator) {
-        this.state.nextGenerator = this.nextGenerator(activeTextEditor)
-      }
+  private setNeedle(activeTextEditor: TextEditor) {
+    const {document, selection} = activeTextEditor
+    const needle = document.getText(document.getWordRangeAtPosition(selection.end))
 
-      const nextResult = this.state.nextGenerator.next()
+    if (typeof needle === 'string') {
+      this.state.discardedMatches.push(needle)
+      this.state.needle = needle
+    }
+  }
 
-      if (nextResult.done || nextResult.value === undefined) {
-        this.reset()
-      }
-    } catch (e) {
-      console.log(e)
+  private async setMatch(match: string, activeTextEditor: TextEditor) {
+    const {selection, document} = activeTextEditor
+
+    const wordRange = document.getWordRangeAtPosition(selection.end)
+
+    if (wordRange) {
+      this.state.preventReset = true
+
+      await activeTextEditor.edit((editBuilder) => {
+        editBuilder.delete(wordRange)
+        editBuilder.insert(selection.end, match)
+      })
+
+      this.state.preventReset = false
     }
   }
 }

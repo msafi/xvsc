@@ -6,8 +6,7 @@ export const simpleAutocomplete = new SimpleAutocomplete()
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerTextEditorCommand('simpleAutocomplete.next', simpleAutocomplete.next),
-    vscode.window.onDidChangeTextEditorSelection(() => {
-      simpleAutocomplete.reset()
-    }),
+    vscode.window.onDidChangeTextEditorSelection(simpleAutocomplete.reset),
+    vscode.workspace.onDidChangeTextDocument(simpleAutocomplete.reset),
   )
 }

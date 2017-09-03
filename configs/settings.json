@@ -56,5 +56,8 @@
     "**/bower_components": true,
     "out": true
   },
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "code-runner.executorMap": {
+    "typescript": "/Users/mk/Code/github/msafi/xvsc/node_modules/.bin/ts-node"
+  }
 }

@@ -1,8 +1,8 @@
-import {TextDocument, Position} from 'vscode'
+import {TextDocument} from 'vscode'
 import * as assert from 'assert'
 import {documentRippleScanner} from '../../src/documentRippleScanner'
 
-describe('tokenizer', () => {
+describe('documentRippleScanner', () => {
   it('exists', () => {
     assert(documentRippleScanner !== undefined)
   })
@@ -17,9 +17,7 @@ describe('tokenizer', () => {
       'const somevak = someFunction(someva)',
       'const ok = 1',
       'const someVariableFoo = 3',
-    ].map((line) => {
-      return {text: line}
-    })
+    ].map((line) => ({text: line}))
     const expectedLines = [
       'const somevak = someFunction(someva)',
       'const someVariable = 2',
@@ -41,7 +39,7 @@ describe('tokenizer', () => {
 
     const documentRippleScannerIterator = documentRippleScanner(
       document,
-      {line: 5, character: 36} as any as Position,
+      5,
     )
 
     assert.deepEqual([...documentRippleScannerIterator].map(line => line.text), expectedLines)

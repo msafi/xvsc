@@ -1,5 +1,4 @@
 import {
-  Position,
   TextDocument,
 } from 'vscode'
 
@@ -10,25 +9,25 @@ enum NextLineToRead {
 }
 
 /**
- * This is a generator function that scans a document for the next match using a pattern similar
- * to a water ripple. I mean, we look for a match starting from the line where the cursor
- * is (the center of the ripple). Then we move to the line above, then the line below. Then the
- * second line above, then the second line below and so on...
+ * This is a generator function that scans a document using a pattern similar to a water ripple. I
+ * mean, we start from the line where the cursor is (as if that was the center of the ripple). Then
+ * we move to the line above, then the line below. Then the second line above, then the second line
+ * below and so on...
  */
 export function* documentRippleScanner(
   document: Readonly<TextDocument>,
-  currentPosition: Readonly<Position>,
+  startingLine: number,
 ) {
   let nextLineToRead: NextLineToRead = NextLineToRead.Current
 
   const indexOfFirstLine = 0
   const indexOfLastLine = document.lineCount - 1
 
-  let upLinePointer = currentPosition.line - 1
-  let downLinePointer = currentPosition.line + 1
+  let upLinePointer = startingLine - 1
+  let downLinePointer = startingLine + 1
   do {
     if (nextLineToRead === NextLineToRead.Current) {
-      yield document.lineAt(currentPosition.line)
+      yield document.lineAt(startingLine)
 
       if (upLinePointer >= indexOfFirstLine) {
         nextLineToRead = NextLineToRead.Higher
