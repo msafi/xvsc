@@ -1,6 +1,7 @@
 import {
   Position,
   TextDocument,
+  TextLine
 } from 'vscode'
 
 enum NextLineToRead {
@@ -9,6 +10,13 @@ enum NextLineToRead {
   Lower,
 }
 
+type LineProcessor = (
+  currentPosition: Position,
+  line: TextLine
+) => {
+  lastScannedCharacter: number,
+  done: boolean
+}
 /**
  * This is a pure function that scans a document for the next match using a pattern similar
  * to a water ripple. I mean, we look for the next match starting from the line where the cursor
@@ -20,10 +28,13 @@ export function documentRippleScanner(
   currentPosition: Readonly<Position>,
   startingUpPosition = currentPosition ,
   startingDownPosition = currentPosition,
+  lineScanner: LineProcessor
 ): {
   lastScannedUpPosition: Readonly<Position>,
   lastScannedDownPosition: Readonly<Position>,
-  lines?: string[]
+  lastScannedCurrentPosition: Readonly<Position>
+  lines?: string[],
+  [name: string]: any
 } {
   const lines: string[] = []
 
@@ -36,7 +47,22 @@ export function documentRippleScanner(
   let downLinePointer = startingDownPosition.line + 1
   do {
     if (nextLineToRead === NextLineToRead.Current) {
-      lines.push(document.lineAt(currentPosition.line).text)
+      const line = document.lineAt(currentPosition.line)
+      const results = lineScanner(currentPosition, line)
+
+      if (results.done) {
+        return {
+          lastScannedUpPosition: startingUpPosition,
+          lastScannedDownPosition: startingDownPosition,
+          lastScannedCurrentPosition: new Position(
+            currentPosition.line,
+            results.lastScannedCharacter
+          ),
+          ...results
+        }
+      }
+
+      lines.push(line.text)
 
       if (upLinePointer >= indexOfFirstLine) {
         nextLineToRead = NextLineToRead.Higher

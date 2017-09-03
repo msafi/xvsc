@@ -43,10 +43,6 @@
     "command": "editor.action.insertLineAfter"
   },
   {
-    "key": "cmd+shift+s",
-    "command": "workbench.action.splitEditor"
-  },
-  {
     "key": "shift+alt+up",
     "command": "editor.action.moveLinesUpAction"
   },
@@ -162,5 +158,9 @@
   {
     "key": "alt+s",
     "command": "workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "workbench.action.splitEditor"
   }
 ]
