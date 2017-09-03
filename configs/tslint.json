@@ -28,7 +28,11 @@
     "strict-boolean-expressions": false,
     "missing-jsdoc": false,
     "trailing-comma": [
-      true
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
     ],
     "import-name": false,
     "export-name": false,

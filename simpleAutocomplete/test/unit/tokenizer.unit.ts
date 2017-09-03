@@ -6,10 +6,10 @@ describe('tokenizer', () => {
     assert(tokenizer !== undefined)
   })
 
-  it('works', () => {
+  it('works as a generator', () => {
     const wordSeparators = "~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
 
-    assert.deepEqual(tokenizer('^^^&hello-man,this is me_haha/ok', wordSeparators), [
+    assert.deepEqual([...tokenizer('^^^&hello-man,this is me_haha/ok', wordSeparators)], [
       {value: 'hello', character: 9},
       {value: 'man', character: 13},
       {value: 'this', character: 18},

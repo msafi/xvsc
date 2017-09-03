@@ -1,4 +1,4 @@
-function someFunction(arg) {
+function someFunction (arg) {
   return arg
 }
 

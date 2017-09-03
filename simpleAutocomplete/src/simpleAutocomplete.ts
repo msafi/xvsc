@@ -2,10 +2,10 @@ import {
   Position,
   TextEditor,
   window,
-  TextLine
+  TextLine,
 } from 'vscode'
 import {documentRippleScanner} from './documentRippleScanner'
-import {lineScanner} from './lineScanner'
+// import {lineScanner} from './lineScanner'
 
 export class SimpleAutocomplete {
   state: {
@@ -13,7 +13,8 @@ export class SimpleAutocomplete {
     upPosition: Position,
     downPosition: Position
     needle: string,
-    matches: string[]
+    matches: string[],
+    documentRippleIterator: IterableIterator<TextLine> | undefined,
   }
 
   constructor() {
@@ -29,7 +30,8 @@ export class SimpleAutocomplete {
       isSearching: false,
       upPosition: new Position(0, 0),
       downPosition: new Position(0, 0),
-      matches: []
+      matches: [],
+      documentRippleIterator: undefined,
     }
   }
 
@@ -40,42 +42,40 @@ export class SimpleAutocomplete {
       const {document} = activeTextEditor
 
       this.state.needle = document.getText(
-        document.getWordRangeAtPosition(activeTextEditor.selection.end)
+        document.getWordRangeAtPosition(activeTextEditor.selection.end),
       )
     }
   }
 
   next(activeTextEditor: TextEditor) {
-    this.setNeedle()
+    // this.setNeedle()
 
-    if (!this.state.needle) {
-      return
-    }
+    // if (!this.state.needle) {
+    //   return
+    // }
 
-    const scanResults = documentRippleScanner(
-      activeTextEditor.document,
-      activeTextEditor.selection.end,
-      this.state.upPosition,
-      this.state.downPosition,
-      (...args) => lineScanner(this.state.needle, ...args)
-    )
+    try {
+      if (!this.state.documentRippleIterator) {
+        const documentRippleIterator = documentRippleScanner(
+          activeTextEditor.document,
+          activeTextEditor.selection.end,
+        )
 
-    const {
-      lastScannedUpPosition,
-      lastScannedDownPosition,
-      match
-    } = scanResults
-
-    if (match) {
-      this.setMatch(match)
-
-      this.state = {
-        ...this.state,
-        upPosition: lastScannedUpPosition,
-        downPosition: lastScannedDownPosition,
+        this.state.documentRippleIterator = documentRippleIterator
       }
-    } else {
-      this.reset()
+
+      // console.log(JSON.stringify([...this.state.documentRippleIterator].map(({text}) => text), null, 2))
+      const next = this.state.documentRippleIterator.next()
+
+      console.log(next.value.text)
+    } catch (e) {
+      console.log(e)
     }
+
+    // const next = this.state.documentRippleIterator.next()
+
+    // do {
+
+    // } while(!next.done)
   }
 }
