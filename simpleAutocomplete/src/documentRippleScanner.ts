@@ -11,15 +11,13 @@ enum NextLineToRead {
 
 /**
  * This is a generator function that scans a document for the next match using a pattern similar
- * to a water ripple. I mean, we look for the next match starting from the line where the cursor
+ * to a water ripple. I mean, we look for a match starting from the line where the cursor
  * is (the center of the ripple). Then we move to the line above, then the line below. Then the
  * second line above, then the second line below and so on...
  */
 export function* documentRippleScanner(
   document: Readonly<TextDocument>,
   currentPosition: Readonly<Position>,
-  // startingUpPosition = currentPosition ,
-  // startingDownPosition = currentPosition,
 ) {
   let nextLineToRead: NextLineToRead = NextLineToRead.Current
 

@@ -35,6 +35,7 @@
   "eslint.options": {
     "configFile": "/Users/mk/Code/github/msafi/xvsc/configs/eslintrc.json"
   },
+  "eslint.nodePath": "/Users/mk/Code/github/msafi/xvsc/node_modules",
   "eslint.run": "onSave",
   "tslint.configFile": "/Users/mk/Code/github/msafi/xvsc/configs/tslint.json",
   "tslint.autoFixOnSave": true,
@@ -47,12 +48,13 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "**/.idea": true
+    "**/.idea": true,
+    "out": true
   },
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
-    "out/**": true
+    "out": true
   },
   "files.insertFinalNewline": true
 }

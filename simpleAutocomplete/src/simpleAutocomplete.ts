@@ -1,20 +1,18 @@
 import {
-  Position,
   TextEditor,
   window,
-  TextLine,
+  // TextLine,
 } from 'vscode'
 import {documentRippleScanner} from './documentRippleScanner'
-// import {lineScanner} from './lineScanner'
+// import {Token, tokenizer} from './tokenizer'
+import {tokenizer} from './tokenizer'
+
+const wordSeparators = "~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
 
 export class SimpleAutocomplete {
   state: {
-    isSearching: boolean,
-    upPosition: Position,
-    downPosition: Position
     needle: string,
-    matches: string[],
-    documentRippleIterator: IterableIterator<TextLine> | undefined,
+    nextGenerator: IterableIterator<string> | undefined,
   }
 
   constructor() {
@@ -27,11 +25,7 @@ export class SimpleAutocomplete {
   reset() {
     this.state = {
       needle: '',
-      isSearching: false,
-      upPosition: new Position(0, 0),
-      downPosition: new Position(0, 0),
-      matches: [],
-      documentRippleIterator: undefined,
+      nextGenerator: undefined,
     }
   }
 
@@ -47,35 +41,42 @@ export class SimpleAutocomplete {
     }
   }
 
-  next(activeTextEditor: TextEditor) {
-    // this.setNeedle()
+  *nextGenerator(activeTextEditor: TextEditor) {
+    const documentIterator = documentRippleScanner(
+      activeTextEditor.document,
+      activeTextEditor.selection.end,
+    )
 
-    // if (!this.state.needle) {
-    //   return
-    // }
+    let nextLine = documentIterator.next()
 
-    try {
-      if (!this.state.documentRippleIterator) {
-        const documentRippleIterator = documentRippleScanner(
-          activeTextEditor.document,
-          activeTextEditor.selection.end,
-        )
+    while(!nextLine.done && nextLine.value !== undefined) {
+      const tokensIterator = tokenizer(nextLine.value.text, wordSeparators)
 
-        this.state.documentRippleIterator = documentRippleIterator
+      let nextToken = tokensIterator.next()
+
+      while(!nextToken.done && nextToken.value !== undefined) {
+        console.log(nextToken.value.value)
+        nextToken = tokensIterator.next()
+        yield ''
       }
 
-      // console.log(JSON.stringify([...this.state.documentRippleIterator].map(({text}) => text), null, 2))
-      const next = this.state.documentRippleIterator.next()
+      nextLine = documentIterator.next()
+    }
+  }
 
-      console.log(next.value.text)
+  next(activeTextEditor: TextEditor) {
+    try {
+      if (!this.state.nextGenerator) {
+        this.state.nextGenerator = this.nextGenerator(activeTextEditor)
+      }
+
+      const nextResult = this.state.nextGenerator.next()
+
+      if (nextResult.done || nextResult.value === undefined) {
+        this.reset()
+      }
     } catch (e) {
       console.log(e)
     }
-
-    // const next = this.state.documentRippleIterator.next()
-
-    // do {
-
-    // } while(!next.done)
   }
 }

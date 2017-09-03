@@ -1,13 +1,18 @@
 const escapeRegExp = require('escape-string-regexp')
 
+export interface Token {
+  value: string,
+  character: number
+}
+
 /**
  * A generator function that takes a string and returns an iterator of the separate words in the
- * given line.
+ * given string.
  *
  * @param str The String to be tokenized
  * @param wordSeparators The splitters by which to tokenize the string
  */
-export function* tokenizer(str: string, wordSeparators: string) {
+export function* tokenizer(str: string, wordSeparators: string): IterableIterator<Token> {
   const wordSeparatorsRegExp = new RegExp(`[${escapeRegExp(wordSeparators)}\\s]`)
 
   let tokenStartIndex
@@ -24,6 +29,13 @@ export function* tokenizer(str: string, wordSeparators: string) {
       }
 
       tokenStartIndex = undefined
+    }
+  }
+
+  if (tokenStartIndex !== undefined) {
+    yield {
+      value: str.slice(tokenStartIndex, str.length),
+      character: str.length,
     }
   }
 }
