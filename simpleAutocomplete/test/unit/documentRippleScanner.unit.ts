@@ -3,6 +3,22 @@ import * as assert from 'assert'
 import {documentRippleScanner} from '../../src/documentRippleScanner'
 
 describe('documentRippleScanner', () => {
+  function createDocument(lines: {text: string}[]) {
+    return {
+      lines,
+      lineAt(index: number) {
+        const line = lines[index]
+
+        if (!line) {
+          throw new Error('Error: Illegal value for `line`')
+        }
+
+        return line
+      },
+      lineCount: lines.length,
+    } as any as TextDocument
+  }
+
   it('exists', () => {
     assert(documentRippleScanner !== undefined)
   })
@@ -29,17 +45,44 @@ describe('documentRippleScanner', () => {
       'function someFunction(arg) {',
     ]
 
-    const document = {
-      lines,
-      lineAt(index: number) {
-        return lines[index]
-      },
-      lineCount: lines.length,
-    } as any as TextDocument
+    const documentRippleScannerIterator = documentRippleScanner(
+      createDocument(lines),
+      5,
+    )
+
+    assert.deepEqual([...documentRippleScannerIterator].map(line => line.text), expectedLines)
+  })
+
+  it('works when the starting line is closer to the top', () => {
+    const lines = ['function someFunction(arg) {',
+      '  return arg',
+      '}',
+      '',
+      'someFunction',
+      'const someVariable = 2',
+      'console.log(someVariable)',
+      'const somevak = someFunction(someVariable)',
+      'const ok = 1',
+      'const someVariableFoo = 3',
+      '',
+    ].map((line) => ({text: line}))
+    const expectedLines = [
+      'someFunction',
+      '',
+      'const someVariable = 2',
+      '}',
+      'console.log(someVariable)',
+      '  return arg',
+      'const somevak = someFunction(someVariable)',
+      'function someFunction(arg) {',
+      'const ok = 1',
+      'const someVariableFoo = 3',
+      '',
+    ]
 
     const documentRippleScannerIterator = documentRippleScanner(
-      document,
-      5,
+      createDocument(lines),
+      4,
     )
 
     assert.deepEqual([...documentRippleScannerIterator].map(line => line.text), expectedLines)

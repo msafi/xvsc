@@ -57,7 +57,7 @@ export function* documentRippleScanner(
 
       downLinePointer++
 
-      if (downLinePointer >= indexOfFirstLine) {
+      if (upLinePointer >= indexOfFirstLine) {
         nextLineToRead = NextLineToRead.Higher
       }
 
