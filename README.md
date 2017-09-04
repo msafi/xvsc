@@ -14,9 +14,9 @@ A Dark UI theme inspired by Railscasts.
 
 Use keyboard shortcuts to jump through occurrences of the word or selection under cursor.
 
-### [Simple Autocomplete](./simpleAutocomplete) (under development)
+### [Simple Autocomplete](./simpleAutocomplete)
 
-Fewer keystrokes, no-nonsense autocomplete that cycles through matches based on word fuzzy search performed on the open document(s).
+Fewer keystrokes, no-nonsense autocomplete that cycles through matches based on fuzzy word search performed on the open document(s). This is like IntelliJ's Cyclic Expand Word or NetBeans Hippie Completion.
 
 ### [Find-Jump](./findJump) (planned)
 
