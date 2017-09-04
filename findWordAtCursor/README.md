@@ -6,7 +6,7 @@ This extension provides the same functionality as IntelliJ's [Find Word At Caret
 
 |Find word at cursor|Find selection|
 |---|---|
-|![](https://raw.githubusercontent.com/msafi/xvscode/master/findWordAtCursor/demoFiles/wordDemo.gif)|![](https://raw.githubusercontent.com/msafi/xvscode/master/findWordAtCursor/demoFiles/selectionDemo.gif)|
+|![](https://raw.githubusercontent.com/msafi/xvsc/master/findWordAtCursor/demoFiles/wordDemo.gif)|![](https://raw.githubusercontent.com/msafi/xvsc/master/findWordAtCursor/demoFiles/selectionDemo.gif)|
 
 ## Extension Settings
 

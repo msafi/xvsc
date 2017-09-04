@@ -1,7 +1,7 @@
 {
-  "name": "xvscode-misc",
-  "displayName": "xvscode-misc",
-  "description": "Misc functionality from xvscode",
+  "name": "xvsc-misc",
+  "displayName": "xvsc-misc",
+  "description": "Misc functionality from xvsc",
   "version": "0.0.1",
   "publisher": "msafi",
   "engines": {

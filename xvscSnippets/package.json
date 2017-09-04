@@ -1,7 +1,7 @@
 {
-  "name": "xvscode-snippets",
-  "displayName": "xvscode-snippets",
-  "description": "xvscode snippets",
+  "name": "xvsc-snippets",
+  "displayName": "xvsc-snippets",
+  "description": "xvsc snippets",
   "version": "0.0.1",
   "publisher": "msafi",
   "engines": {

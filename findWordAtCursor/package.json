@@ -5,7 +5,7 @@
     "version": "1.10.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/msafi/xvscode/tree/master/findWordAtCursor"
+        "url": "https://github.com/msafi/xvsc/tree/master/findWordAtCursor"
     },
     "publisher": "mksafi",
     "engines": {

@@ -2,7 +2,7 @@
 
 Fewer keystrokes, no-nonsense autocomplete that cycles through matches based on fuzzy word search performed on the open document(s). This is like IntelliJ's Cyclic Expand Word or NetBeans Hippie Completion.
 
-![](https://raw.githubusercontent.com/msafi/xvscode/master/simpleAutocomplete/demoFiles/demo.gif)
+![](https://raw.githubusercontent.com/msafi/xvsc/master/simpleAutocomplete/demoFiles/demo.gif)
 
 ## Extension Settings
 
