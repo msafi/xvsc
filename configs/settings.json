@@ -59,5 +59,6 @@
   "files.insertFinalNewline": true,
   "code-runner.executorMap": {
     "typescript": "/Users/mk/Code/github/msafi/xvsc/node_modules/.bin/ts-node"
-  }
+  },
+  "workbench.sideBar.location": "left"
 }

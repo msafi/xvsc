@@ -76,7 +76,7 @@
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "ctrl+e",
+    "key": "cmd+alt+e",
     "command": "workbench.view.explorer"
   },
   {
@@ -106,7 +106,7 @@
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+i",
+    "key": "alt+cmd+v",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -162,5 +162,34 @@
   {
     "key": "shift+cmd+s",
     "command": "workbench.action.splitEditor"
+  },
+  {
+    "key": "cmd+r",
+    "command": "editor.action.startFindReplaceAction"
+  },
+  {
+    "key": "alt+cmd+f",
+    "command": "-editor.action.startFindReplaceAction"
+  },
+  {
+    "key": "alt+cmd+r",
+    "command": "workbench.action.replaceInFiles"
+  },
+  {
+    "key": "alt+cmd+f",
+    "command": "workbench.action.findInFiles",
+    "when": "!searchInputBoxFocus"
+  },
+  {
+    "key": "alt+cmd+z",
+    "command": "workbench.actions.view.problems"
+  },
+  {
+    "key": "alt+cmd+x",
+    "command": "workbench.action.output.toggleOutput"
+  },
+  {
+    "key": "alt+cmd+c",
+    "command": "workbench.debug.action.toggleRepl"
   }
 ]

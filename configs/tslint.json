@@ -6,6 +6,7 @@
     "tslint-config-standard"
   ],
   "rules": {
+    "no-backbone-get-set-outside-model": false,
     "no-relative-imports": false,
     "typedef": [false],
     "return-undefined": false,

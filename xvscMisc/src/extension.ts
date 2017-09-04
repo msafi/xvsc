@@ -1,5 +1,5 @@
-'use strict';
-import {ExtensionContext, commands, window} from 'vscode';
+'use strict'
+import {ExtensionContext, commands, window} from 'vscode'
 import {openInSourceTree} from './openInSourceTree'
 import {deleteToTextBeginning} from './deleteToTextBeginning'
 
@@ -15,7 +15,7 @@ export function activate(context: ExtensionContext) {
       storage.update('hasSwitched', true)
     }
   }
-  
+
   if (isActiveEditor) {
     handleLayoutSwitch()
   } else {
@@ -24,7 +24,7 @@ export function activate(context: ExtensionContext) {
       registration.dispose()
     })
   }
-  
+
   context.subscriptions.push(
     registerTextEditorCommand('xvscm.openInSourceTree', withContext(openInSourceTree)),
     registerTextEditorCommand('xvscm.deleteToTextBeginning', withContext(deleteToTextBeginning)),

@@ -30,7 +30,7 @@ Like VS Code built-in smart selection feature, but with better abstract syntax t
 
 ### [Configs](./configs), [xvscMisc](./xvscMisc), and [xvscSnippets](./xvscSnippets)
 
-I also put my `settings.json`, `keybindings.json`, and code snippets in this repo. I also have this extension where I put bits and pieces of functionality.
+I also put my `settings.json`, `keybindings.json`, and code snippets in this repo. I also have [this extension](./xvscMisc) where I put bits and pieces of functionality.
 
 ## License
 
