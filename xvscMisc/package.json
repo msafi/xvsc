@@ -23,9 +23,6 @@
     }, {
       "command": "xvscm.deleteToTextBeginning",
       "title": "Delete to the first non-whitespace character"
-    }, {
-      "command": "xvscm.switchEditorGroupLayoutOnce",
-      "title": "Switch editor group layout once"
     }]
   },
   "scripts": {

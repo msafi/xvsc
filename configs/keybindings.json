@@ -88,7 +88,7 @@
     "command": "explorer.newFolder"
   },
   {
-    "key": "ctrl+=",
+    "key": "alt+cmd+right",
     "command": "workbench.action.navigateForward"
   },
   {
@@ -191,5 +191,9 @@
   {
     "key": "alt+cmd+c",
     "command": "workbench.debug.action.toggleRepl"
+  },
+  {
+    "key": "alt+cmd+left",
+    "command": "workbench.action.navigateBack"
   }
 ]

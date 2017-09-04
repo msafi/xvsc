@@ -12,6 +12,10 @@
   "editor.multiCursorModifier": "alt",
   "editor.detectIndentation": false,
   "window.newWindowDimensions": "inherit",
+  "workbench.colorCustomizations": {
+    "editor.background": "#090909",
+    "editor.lineHighlightBackground": "#202020"
+  },
   "editor.rulers": [
     100
   ],
