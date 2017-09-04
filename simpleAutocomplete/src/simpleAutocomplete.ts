@@ -1,9 +1,7 @@
-import {TextEditor} from 'vscode'
+import {TextEditor, workspace} from 'vscode'
 import {documentRippleScanner} from './documentRippleScanner'
 import {tokenizer} from './tokenizer'
 import {fuzzySearch} from './fuzzySearch'
-
-const wordSeparators = "~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?"
 
 export class SimpleAutocomplete {
   state: {
@@ -11,6 +9,7 @@ export class SimpleAutocomplete {
     nextIterator: IterableIterator<boolean> | undefined,
     preventReset: boolean,
     discardedMatches: string[],
+    isActive: boolean,
   }
 
   constructor() {
@@ -21,12 +20,23 @@ export class SimpleAutocomplete {
   }
 
   public reset() {
-    if (!this.state || this.state.preventReset !== true) {
-      this.forceReset()
+    if (
+      (!this.state) ||
+      (this.state.preventReset !== true && this.state.isActive)
+    ) {
+      this.state = {
+        needle: '',
+        nextIterator: undefined,
+        preventReset: false,
+        discardedMatches: [],
+        isActive: false,
+      }
     }
   }
 
   public next(activeTextEditor: TextEditor) {
+    this.state.isActive = true
+
     if (this.canAutocomplete(activeTextEditor)) {
       if (!this.state.nextIterator) {
         this.state.nextIterator = this.nextGenerator(activeTextEditor)
@@ -39,15 +49,6 @@ export class SimpleAutocomplete {
       }
     } else {
       this.reset()
-    }
-  }
-
-  private forceReset() {
-    this.state = {
-      needle: '',
-      nextIterator: undefined,
-      preventReset: false,
-      discardedMatches: [],
     }
   }
 
@@ -77,6 +78,7 @@ export class SimpleAutocomplete {
     const {document, selection} = activeTextEditor
     const documentIterator = documentRippleScanner(document, selection.end.line)
     for (const line of documentIterator) {
+      const wordSeparators = workspace.getConfiguration().editor.wordSeparators
       const tokensIterator = tokenizer(line.text, wordSeparators)
 
       for (const token of tokensIterator) {

@@ -34,4 +34,4 @@ I also put my `settings.json`, `keybindings.json`, and code snippets in this rep
 
 ## License
 
-All code in this repo is public domain. For jurisdictions that don't allow public domain licensing, interested parties can settle disputes with a trial by combat.
+All code in this repo is public domain. For jurisdictions that don't allow public domain licensing, claimants can settle disputes in a trial by combat ⚔️
