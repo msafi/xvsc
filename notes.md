@@ -9,6 +9,7 @@ The following is the functionality that I need to add to VS Code to bring it to 
 - [ ] Copy line keyboard shortcut. cmd+c on IntelliJ.
 - [ ] Search jump feature, like Ace Jump on IntelliJ
 - [ ] Get Emmet to work
+- [ ] Change the color of types to orange
 - [ ] Change color of destructured/renamed, property
 - [ ] Ability to fold markdown links *INVESTIGATE*
 - [ ] Navigate files in Explorer by typing [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33109)

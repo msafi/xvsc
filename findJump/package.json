@@ -11,14 +11,14 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:findJump.find"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "findJump.find",
+                "title": "Trigger Find-Jump"
             }
         ]
     },
@@ -34,5 +34,10 @@
         "mocha": "^2.3.3",
         "@types/node": "^6.0.40",
         "@types/mocha": "^2.2.32"
+    },
+    "dependencies": {
+        "@types/lodash.debounce": "^4.0.3",
+        "lodash.debounce": "^4.0.8",
+        "xvsc-common": "^1.0.0"
     }
 }

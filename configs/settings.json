@@ -12,10 +12,6 @@
   "editor.multiCursorModifier": "alt",
   "editor.detectIndentation": false,
   "window.newWindowDimensions": "inherit",
-  "workbench.colorCustomizations": {
-    "editor.background": "#090909",
-    "editor.lineHighlightBackground": "#202020"
-  },
   "editor.rulers": [
     100
   ],
@@ -64,5 +60,11 @@
   "code-runner.executorMap": {
     "typescript": "/Users/mk/Code/github/msafi/xvsc/node_modules/.bin/ts-node"
   },
-  "workbench.sideBar.location": "left"
+  "workbench.sideBar.location": "left",
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggestOnTriggerCharacters": false
 }

@@ -2,7 +2,7 @@
 [
   {
     "key": "ctrl+;",
-    "command": "extension.aceJump"
+    "command": "findJump.find"
   },
   {
     "key": "cmd+=",
@@ -148,7 +148,7 @@
     "command": "code-runner.run"
   },
   {
-    "key": "cmd+k k",
+    "key": "cmd+k c",
     "command": "workbench.debug.panel.action.clearReplAction"
   },
   {
@@ -195,5 +195,9 @@
   {
     "key": "alt+cmd+left",
     "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "cmd+k v",
+    "command": "workbench.action.terminal.clear"
   }
 ]

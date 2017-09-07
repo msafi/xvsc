@@ -6,6 +6,8 @@
     "tslint-config-standard"
   ],
   "rules": {
+    "no-conditional-assignment": false,
+    "no-parameter-properties": false,
     "no-backbone-get-set-outside-model": false,
     "no-relative-imports": false,
     "typedef": [false],

@@ -1,13 +1,20 @@
 'use strict'
-import * as vscode from 'vscode'
+import {commands, ExtensionContext} from 'vscode'
 import {FindJump} from './findJump'
+import {subscriptions as inlineInputSubscriptions} from './inlineInput'
 
-const findJump = new FindJump()
+export function activate(context: ExtensionContext) {
+  const findJump = new FindJump()
 
-export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerTextEditorCommand('findJump.find', findJump.find),
+    commands.registerTextEditorCommand('findJump.find', findJump.find),
   )
 }
 
-const uuuuuuuuuuusususususususus = 'asdf'
+export function deactivate() {
+  const subscriptions = [...inlineInputSubscriptions]
+
+  subscriptions.forEach(
+    (subscription) => subscription.dispose(),
+  )
+}

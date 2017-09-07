@@ -8,14 +8,14 @@ import {
   ThemeColor,
   Range,
   Disposable,
-  TextDocument
+  TextDocument,
 } from 'vscode'
 
 // We will decorate found matches with this decoration type, which is just the default theme
 // highlight behind the word.
 const decorationType = window.createTextEditorDecorationType({
-  backgroundColor: new ThemeColor('editor.wordHighlightBackground')
-});
+  backgroundColor: new ThemeColor('editor.wordHighlightBackground'),
+})
 
 // We export eventRegistrations so that we can remove the listeners in `extension.ts` when
 // the extension is deactivated
@@ -91,14 +91,14 @@ function _seek(seekBack = false) {
       needle,
       document.lineAt(i),
 
-      //If the line we're looking at is the same line where the cursor currently is, we
+      // If the line we're looking at is the same line where the cursor currently is, we
       // start searching that line from the location of the first word that appears after or before
       // the cursor, depending on whether we're seeking back or not.
       (i === end.line) ? wordAtCursorRange[seekBack ? 'start' : 'end'].character : undefined,
       seekBack,
       isSelectionSearch,
       i,
-      document
+      document,
     )
 
     if (indexInLine !== -1) {
@@ -121,9 +121,9 @@ function _seek(seekBack = false) {
           setTimeout(() => {
             activeTextEditor.setDecorations(
               decorationType,
-              [range]
+              [range],
             )
-          }, 10);
+          }, 10)
         }
       }
 
@@ -206,7 +206,7 @@ function _findIndexInLine(
         seekBack,
         isSelectionSearch,
         line,
-        document
+        document,
       )
     }
   }

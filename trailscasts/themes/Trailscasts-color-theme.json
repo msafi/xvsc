@@ -2,15 +2,17 @@
   "name": "Trailscasts",
   "type": "dark",
   "colors": {
-    "editor.background": "#000000AE",
     "editor.foreground": "#E6E1DC",
     "activityBarBadge.background": "#007acc",
     "sideBarTitle.foreground": "#bbbbbb",
-    "editor.lineHighlightBackground": "#131414",
     "statusBar.background": "#303030",
     "editorBracketMatch.background": "#3344F09E",
     "editorBracketMatch.border": "#3344F09E",
-    "editorRuler.foreground": "#FFFFFF24"
+    "editorRuler.foreground": "#FFFFFF24",
+    "editor.background": "#090909",
+    "editor.lineHighlightBackground": "#202020",
+    "editorSuggestWidget.background": "#0000009B",
+    "editorHoverWidget.background": "#0000009B"
   },
   "tokenColors": [
     {
@@ -80,7 +82,7 @@
         "meta.tag",
         // JSX/TSX: classes
         "meta.tag support",
-        // JavaScript: function call			
+        // JavaScript: function call
         "meta.function-call",
         // JavaScript: function declarations/expressions
         "entity.name.function",
