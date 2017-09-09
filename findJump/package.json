@@ -1,9 +1,9 @@
 {
   "name": "find-jump",
-  "displayName": "find-jump",
-  "description": "Like Ace Jump, quickly move cursor to visible location",
-  "version": "0.0.1",
-  "publisher": "msafi",
+  "displayName": "Find-Jump",
+  "description": "Like Ace Jump, but better. Quickly move cursor to visible location",
+  "version": "1.1.0",
+  "publisher": "mksafi",
   "engines": {
     "vscode": "^1.15.0"
   },
@@ -18,7 +18,7 @@
     "commands": [
       {
         "command": "findJump.activate",
-        "title": "Trigger Find-Jump"
+        "title": "Activate Find-Jump"
       }
     ]
   },

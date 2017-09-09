@@ -18,7 +18,7 @@ Use keyboard shortcuts to jump through occurrences of the word or selection unde
 
 Fewer keystrokes, no-nonsense autocomplete that cycles through matches based on fuzzy word search performed on the open document(s). This is like IntelliJ's Cyclic Expand Word or NetBeans Hippie Completion.
 
-### [Find-Jump](./findJump) (under development)
+### [Find-Jump](./findJump)
 
 Like Ace Jump but with a flow such as:
 
