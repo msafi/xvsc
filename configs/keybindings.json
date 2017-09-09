@@ -2,7 +2,7 @@
 [
   {
     "key": "ctrl+;",
-    "command": "findJump.find"
+    "command": "findJump.activate"
   },
   {
     "key": "cmd+=",

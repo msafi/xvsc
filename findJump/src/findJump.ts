@@ -12,49 +12,30 @@ import {AssociationManager} from './associationManager'
 type Match = { start: number, end: number, excludedChars: string[] }
 type MatchesArr = Match[]
 
-let activityIndicatorState = 0
-
-const associationManager = new AssociationManager()
-const debounce = require('lodash.debounce') as <T>(fn: T, wait: number, options?: any) => T
-const jumpChars = [
-  'a', 'b', 'c', 'd', 'e', 'f', 'g',
-  'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
-  'q', 'r', 's',
-  't', 'u', 'v',
-  'w', 'x',
-  'y', 'z',
-
-  'A', 'B', 'C', 'D', 'E', 'F', 'G',
-  'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-  'Q', 'R', 'S',
-  'T', 'U', 'V',
-  'W', 'X',
-  'Y', 'Z',
-]
-
-// console.log(jumpChars)
-
 export class FindJump {
   isActive = false
   inlineInput: InlineInput
   intervalHandler: any
   userInput: string = ''
   textEditor: TextEditor
-  associations: Map<string, Range> = new Map()
+  associationManager = new AssociationManager()
+  activityIndicatorState = 0
 
-  find = (textEditor: TextEditor) => {
-    this.textEditor = textEditor
-
+  activate = (textEditor: TextEditor) => {
     try {
-      if (!this.isActive) {
-        this.isActive = true
+      this.textEditor = textEditor
 
-        this.inlineInput = new InlineInput({
-          textEditor,
-          onInput: this.onInput,
-          onCancel: this.onCancel,
-        })
+      if (this.isActive) {
+        this.reset()
       }
+
+      this.isActive = true
+
+      this.inlineInput = new InlineInput({
+        textEditor,
+        onInput: this.onInput,
+        onCancel: this.reset,
+      })
 
       this.updateStatusBarWithActivityIndicator()
     } catch(e) {
@@ -62,15 +43,10 @@ export class FindJump {
     }
   }
 
-  onInput = (input: string) => {
-    if (input.length > this.userInput.length) {
-      const jumpChar = input[input.length - 1]
-
-      if (this.associations.has(jumpChar)) {
-        this.jump(jumpChar)
-        this.onCancel()
-        return
-      }
+  onInput = (input: string, char: string) => {
+    if (this.associationManager.associations.has(char)) {
+      this.jump(char)
+      return
     }
 
     this.userInput = input
@@ -78,97 +54,64 @@ export class FindJump {
     this.performSearch()
   }
 
-  /*tslint:disable:member-ordering*/
-  performSearch = debounce(
-    () => {
-      const availableJumpChars = [...jumpChars]
-      if (associationManager.activeDecorations.length > 0) {
-        associationManager.dispose()
-      }
+  performSearch = () => {
+    const {matches, availableJumpChars} = this.getMatchesAndAvailableJumpChars()
+    const matchesIsBigger = matches.length > availableJumpChars.length
+    const iterationLength = matchesIsBigger ? availableJumpChars.length : matches.length
 
-      const {document, selection} = this.textEditor
-      const documentIterator = documentRippleScanner(document, selection.end.line)
+    if (matches.length > 0) {
+      this.associationManager.dispose()
+    }
 
-      const matches: {value: Match, index: number}[] = []
-      // const decoratedMatches = []
-      for(const {line, index} of documentIterator) {
-        // const lineMatches = this.getMatches(line).map((match) => ({value: match, index}))
+    for(let i = 0; i < iterationLength; i++) {
+      const match = matches[i]
+      const availableJumpChar = availableJumpChars[i]
+      const {index, value} = match
+      const range = new Range(index, value.start, index, value.end)
 
-        this.getMatches(line).forEach((match) => {
-          matches.push({value: match, index})
-          match.excludedChars.forEach((excludedChar) => {
-            let indexOfExcludedSmallChar
-            if (
-              (indexOfExcludedSmallChar = availableJumpChars.indexOf(excludedChar.toLowerCase())) !== -1
-            ) {
-              availableJumpChars.splice(indexOfExcludedSmallChar, 1)
-            }
-
-            let indexOfExcludedBigChar
-            if (
-              (indexOfExcludedBigChar = availableJumpChars.indexOf(excludedChar.toUpperCase())) !== -1
-            ) {
-              availableJumpChars.splice(indexOfExcludedBigChar, 1)
-            }
-          })
-        })
-
-        // console.log('excludedChars', [...excludedChars])
-        // if (lineMatches.length > 0) {
-        //   matches.push(...lineMatches)
-        // }
-      }
-
-      const matchesIsBigger = matches.length > availableJumpChars.length
-      const iterationLength = matchesIsBigger ? availableJumpChars.length : matches.length
-
-      for(let i = 0; i < iterationLength; i++) {
-        const match = matches[i]
-        const availableJumpChar = availableJumpChars[i]
-        const range = new Range(
-          match.index,
-          match.value.start,
-          match.index,
-          match.value.end,
-        )
-
-        associationManager.createAssociation(
-          availableJumpChar,
-          range,
-          this.textEditor,
-        )
-
-        this.associations.set(availableJumpChar, range)
-      }
-
-      // this.textEditor.setDecorations(
-      //   this.decoration,
-      //   matches.map(match => new Range(
-      //     match.index,
-      //     match.value.start,
-      //     match.index,
-      //     match.value.end,
-      //   )),
-      // )
-    },
-    200,
-    {trailing: true},
-  )
-
-  jump = (jumpChar: string) => {
-    const range = this.associations.get(jumpChar)
-
-    if (range) {
-      this.textEditor.selection = new Selection(
-        range.start.line,
-        range.start.character,
-        range.start.line,
-        range.start.character,
-      )
+      this.associationManager.createAssociation(availableJumpChar, range, this.textEditor)
     }
   }
 
-  getMatches(line: TextLine): MatchesArr {
+  jump = (jumpChar: string) => {
+    const range = this.associationManager.associations.get(jumpChar)
+
+    if (!range) {
+      return
+    }
+
+    const {line, character} = range.start
+
+    this.textEditor.selection = new Selection(line, character, line, character)
+    this.reset()
+  }
+
+  getMatchesAndAvailableJumpChars = () => {
+    const {document, selection} = this.textEditor
+    const documentIterator = documentRippleScanner(document, selection.end.line)
+    const availableJumpChars = [...this.associationManager.jumpChars]
+    const matches: { value: Match, index: number }[] = []
+
+    for (const {line, index} of documentIterator) {
+      this.getLineMatches(line).forEach((lineMatch) => {
+        matches.push({value: lineMatch, index})
+        lineMatch.excludedChars.forEach((excludedChar) => {
+          for (let i = 0; i < 2; i++) {
+            const method = i === 0 ? 'toLowerCase' : 'toUpperCase'
+            const indexOfExcludedChar = availableJumpChars.indexOf(excludedChar[method]())
+
+            if (indexOfExcludedChar !== -1) {
+              availableJumpChars.splice(indexOfExcludedChar, 1)
+            }
+          }
+        })
+      })
+    }
+
+    return {matches, availableJumpChars}
+  }
+
+  getLineMatches = (line: TextLine): MatchesArr => {
     const indexes = []
     const {text} = line
     const haystack = text.toLowerCase()
@@ -177,12 +120,7 @@ export class FindJump {
     let index = 0
     let iterationNumber = 0
     while (
-      (
-        index = haystack.indexOf(
-          needle,
-          iterationNumber === 0 ? 0 : index + needle.length,
-        )
-      ) !== -1
+      (index = haystack.indexOf(needle, iterationNumber === 0 ? 0 : index + needle.length)) !== -1
     ) {
       const start = index
       const end = index + needle.length
@@ -194,27 +132,27 @@ export class FindJump {
     return indexes
   }
 
-  onCancel = () => {
+  reset = () => {
     this.isActive = false
     this.userInput = ''
     this.clearActivityIndicator()
-    associationManager.dispose()
-    this.associations = new Map()
+    this.inlineInput.destroy()
+    this.associationManager.dispose()
   }
 
   updateStatusBarWithActivityIndicator = () => {
     const callback = () => {
-      if (activityIndicatorState === 1) {
+      if (this.activityIndicatorState === 1) {
         this.inlineInput.updateStatusBar(`Find-Jump: ${this.userInput} 🔴`)
-        activityIndicatorState = 0
+        this.activityIndicatorState = 0
       } else {
         this.inlineInput.updateStatusBar(`Find-Jump: ${this.userInput} ⚪`)
-        activityIndicatorState = 1
+        this.activityIndicatorState = 1
       }
     }
 
     this.inlineInput.updateStatusBar(
-      `Find-Jump: ${this.userInput} ${activityIndicatorState === 0 ? '🔴' : '⚪'}`,
+      `Find-Jump: ${this.userInput} ${this.activityIndicatorState === 0 ? '🔴' : '⚪'}`,
     )
 
     if (this.intervalHandler === undefined) {

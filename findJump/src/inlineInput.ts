@@ -16,7 +16,7 @@ export class InlineInput {
 
   constructor(private props: {
     textEditor: TextEditor,
-    onInput(input: string): any,
+    onInput(input: string, char: string): any,
     onCancel(...args: any[]): any,
   }) {
     subscriptions.push(
@@ -35,6 +35,11 @@ export class InlineInput {
     this.statusBarItem.show()
   }
 
+  public destroy = () => {
+    this.statusBarItem.dispose()
+    subscriptions.forEach((subscription) => subscription.dispose())
+  }
+
   private onInput = ({text}: {text: string}) => {
     const char = text
 
@@ -43,16 +48,12 @@ export class InlineInput {
     if (cancellationChars.has(char)) {
       this.onCancel()
     } else {
-      return this.props.onInput(this.input)
+      return this.props.onInput(this.input, char)
     }
   }
 
   private onCancel = (...args: any[]) => {
-    console.log('=\nFILE: inlineInput.ts\nLINE: 51\n=')
-
-    this.statusBarItem.dispose()
-    subscriptions.forEach((subscription) => subscription.dispose())
-
+    this.destroy()
     return this.props.onCancel(args)
   }
 }

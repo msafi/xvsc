@@ -3,11 +3,11 @@ import {commands, ExtensionContext} from 'vscode'
 import {FindJump} from './findJump'
 import {subscriptions as inlineInputSubscriptions} from './inlineInput'
 
-export function activate(context: ExtensionContext) {
-  const findJump = new FindJump()
+const findJump = new FindJump()
 
+export function activate(context: ExtensionContext) {
   context.subscriptions.push(
-    commands.registerTextEditorCommand('findJump.find', findJump.find),
+    commands.registerTextEditorCommand('findJump.activate', findJump.activate),
   )
 }
 
