@@ -1,65 +1,30 @@
-# find-jump README
+# [Find-Jump](https://marketplace.visualstudio.com/items?itemName=mksafi.find-jump)
 
-This is the README for your extension "find-jump". After writing up a brief description, we recommend including the following sections.
+Find-Jump is like AceJump for IntelliJ IDEs, which is in turn inspired by AceJump for Emacs.
 
-## Features
+Find-Jump is slightly different, however. While the other AceJump solutions can jump to a word
+given a single letter, Find-Jump works better when you type a sequence of characters so that it can narrow down the location to where you want to jump. I made it this way because I believe this provides a better overall experience.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+![](https://raw.githubusercontent.com/msafi/xvsc/master/findJump/demoFiles/demo.gif)
 
-For example if there is an image subfolder under your extension project workspace:
+## How to use Find-Jump
 
-\!\[feature X\]\(images/feature-x.png\)
+First you need to bind the `findJump.activate` command to a keyboard shortcut. I bind it to `ctrl+;`.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+When you activate Find-Jump, you'll see a blinking red light in the status bar indicating that Find-Jump is active and is receiving your input (see gif above). Now you can start typing the characters to where you want to jump. Usually 3 to 5 characters should be enough to narrow down the location, but your own workflow may vary.
 
-## Requirements
+A few things to note:
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+* The jump character is always a single letter. Sometimes the jump character needs to be pressed with the SHIFT key, which would be indicated on the jump location like `⇧z`
+* You cannot press ESC to exit Find-Jump (due to VS Code limitation)
+* Pressing the arrow keys, backspace, or the enter key will exit Find-Jump
+* You cannot edit what you've typed into the Find-Jump prompt (due to VS Code limitation)
+* While Find-Jump is active, you can press the activation keybinding again to reset Find-Jump and start over. This somewhat makes up for the inability to edit
 
-## Extension Settings
+## Find-Jump settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Find-Jump adds one command:
 
-For example:
+* `findJump.activate`: which activates Find-Jump
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Note** No keybinding is provided by this extension. You have to create one yourself.
