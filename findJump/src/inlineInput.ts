@@ -48,6 +48,8 @@ export class InlineInput {
   }
 
   private onCancel = (...args: any[]) => {
+    console.log('=\nFILE: inlineInput.ts\nLINE: 51\n=')
+
     this.statusBarItem.dispose()
     subscriptions.forEach((subscription) => subscription.dispose())
 

@@ -33,11 +33,11 @@
   ],
   "eslint.autoFixOnSave": true,
   "eslint.options": {
-    "configFile": "/Users/mk/Code/github/msafi/xvsc/configs/eslintrc.json"
+    "configFile": "/Users/mk/Dropbox/vscode/xvsc/configs/eslintrc.json"
   },
-  "eslint.nodePath": "/Users/mk/Code/github/msafi/xvsc/node_modules",
+  "eslint.nodePath": "/Users/mk/Dropbox/vscode/xvsc/node_modules",
   "eslint.run": "onSave",
-  "tslint.configFile": "/Users/mk/Code/github/msafi/xvsc/configs/tslint.json",
+  "tslint.configFile": "/Users/mk/Dropbox/vscode/xvsc/configs/tslint.json",
   "tslint.autoFixOnSave": true,
   "tslint.run": "onSave",
   "editor.formatOnPaste": true,
@@ -58,7 +58,7 @@
   },
   "files.insertFinalNewline": true,
   "code-runner.executorMap": {
-    "typescript": "/Users/mk/Code/github/msafi/xvsc/node_modules/.bin/ts-node"
+    "typescript": "/Users/mk/Dropbox/xvsc/node_modules/.bin/ts-node"
   },
   "workbench.sideBar.location": "left",
   "editor.quickSuggestions": {

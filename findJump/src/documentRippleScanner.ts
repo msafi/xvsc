@@ -27,7 +27,7 @@ export function* documentRippleScanner(
   let downLinePointer = startingLine + 1
   do {
     if (nextLineToRead === NextLineToRead.Current) {
-      yield document.lineAt(startingLine)
+      yield {line: document.lineAt(startingLine), index: startingLine}
 
       if (upLinePointer >= indexOfFirstLine) {
         nextLineToRead = NextLineToRead.Higher
@@ -41,7 +41,7 @@ export function* documentRippleScanner(
     }
 
     if (nextLineToRead === NextLineToRead.Higher) {
-      yield document.lineAt(upLinePointer)
+      yield {line: document.lineAt(upLinePointer), index: upLinePointer}
 
       upLinePointer--
 
@@ -53,7 +53,7 @@ export function* documentRippleScanner(
     }
 
     if (nextLineToRead === NextLineToRead.Lower) {
-      yield document.lineAt(downLinePointer)
+      yield {line: document.lineAt(downLinePointer), index: downLinePointer}
 
       downLinePointer++
 
