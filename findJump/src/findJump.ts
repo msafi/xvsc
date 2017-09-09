@@ -93,6 +93,8 @@ export class FindJump {
     const matches: { value: Match, index: number }[] = []
 
     for (const {line, index} of documentIterator) {
+      if (matches.length >= availableJumpChars.length) { break }
+
       this.getLineMatches(line).forEach((lineMatch) => {
         matches.push({value: lineMatch, index})
         lineMatch.excludedChars.forEach((excludedChar) => {
