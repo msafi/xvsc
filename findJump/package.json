@@ -2,10 +2,14 @@
   "name": "find-jump",
   "displayName": "Find-Jump",
   "description": "Like Ace Jump, but better. Quickly move cursor to visible location",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "mksafi",
   "engines": {
     "vscode": "^1.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msafi/xvsc/tree/master/findJump"
   },
   "categories": [
     "Other"
