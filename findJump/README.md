@@ -23,7 +23,7 @@ A few things to note:
 
 ## Find-Jump settings
 
-Find-Jump adds one command:
+Find-Jump adds these commands:
 
 * `findJump.activate`: which activates Find-Jump
 * `findJump.activateWithSelection`: like `findJump.activate` but will make a selection from the current cursor position to the new cursor position
