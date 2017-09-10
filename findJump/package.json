@@ -15,7 +15,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:findJump.activate"
+    "onCommand:findJump.activate",
+    "onCommand:findJump.activateWithSelection"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -23,6 +24,10 @@
       {
         "command": "findJump.activate",
         "title": "Activate Find-Jump"
+      },
+      {
+        "command": "findJump.activateWithSelection",
+        "title": "Activate Find-Jump in selection mode"
       }
     ]
   },

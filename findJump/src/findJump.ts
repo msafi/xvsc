@@ -20,27 +20,29 @@ export class FindJump {
   textEditor: TextEditor
   associationManager = new AssociationManager()
   activityIndicatorState = 0
+  activatedWithSelection = false
 
   activate = (textEditor: TextEditor) => {
-    try {
-      this.textEditor = textEditor
+    this.textEditor = textEditor
 
-      if (this.isActive) {
-        this.reset()
-      }
-
-      this.isActive = true
-
-      this.inlineInput = new InlineInput({
-        textEditor,
-        onInput: this.onInput,
-        onCancel: this.reset,
-      })
-
-      this.updateStatusBarWithActivityIndicator()
-    } catch(e) {
-      console.log(e)
+    if (this.isActive) {
+      this.reset()
     }
+
+    this.isActive = true
+
+    this.inlineInput = new InlineInput({
+      textEditor,
+      onInput: this.onInput,
+      onCancel: this.reset,
+    })
+
+    this.updateStatusBarWithActivityIndicator()
+  }
+
+  activateWithSelection = (textEditor: TextEditor) => {
+    this.activatedWithSelection = true
+    this.activate(textEditor)
   }
 
   onInput = (input: string, char: string) => {
@@ -82,7 +84,22 @@ export class FindJump {
 
     const {line, character} = range.start
 
-    this.textEditor.selection = new Selection(line, character, line, character)
+    if (this.activatedWithSelection) {
+      this.textEditor.selection = new Selection(
+        this.textEditor.selection.start.line,
+        this.textEditor.selection.start.character,
+        line,
+        character,
+      )
+    } else {
+      this.textEditor.selection = new Selection(
+        line,
+        character,
+        line,
+        character,
+      )
+    }
+
     this.reset()
   }
 
@@ -136,6 +153,7 @@ export class FindJump {
 
   reset = () => {
     this.isActive = false
+    this.activatedWithSelection = false
     this.userInput = ''
     this.clearActivityIndicator()
     this.inlineInput.destroy()

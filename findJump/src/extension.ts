@@ -7,7 +7,14 @@ const findJump = new FindJump()
 
 export function activate(context: ExtensionContext) {
   context.subscriptions.push(
-    commands.registerTextEditorCommand('findJump.activate', findJump.activate),
+    commands.registerTextEditorCommand(
+      'findJump.activate',
+      findJump.activate,
+    ),
+    commands.registerTextEditorCommand(
+      'findJump.activateWithSelection',
+      findJump.activateWithSelection,
+    ),
   )
 }
 
