@@ -2,7 +2,7 @@
   "name": "find-jump",
   "displayName": "Find-Jump",
   "description": "Like Ace Jump, but better. Quickly move cursor to visible location",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "mksafi",
   "engines": {
     "vscode": "^1.15.0"
