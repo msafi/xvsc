@@ -32,7 +32,7 @@ Find-Jump adds these commands:
 
 ## Checkout my other VS Code projects
 
-They're listed and described on [here](https://github.com/msafi/xvsc#projects-in-this-repo).
+They're listed and described [here](https://github.com/msafi/xvsc#projects-in-this-repo).
 
 ## Let's talk about features on twitter
 

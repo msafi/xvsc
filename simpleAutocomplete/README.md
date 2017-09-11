@@ -11,3 +11,15 @@ This extension adds one command:
 * `simpleAutocomplete.next`: which cycles through the autocomplete results
 
 **Note** No keybinding is provided by this extension. You have to create one yourself.
+
+## Checkout my other VS Code projects
+
+They're listed and described [here](https://github.com/msafi/xvsc#projects-in-this-repo).
+
+## Let's talk about features on twitter
+
+This is [my handle](https://twitter.com/msafi)
+
+## Issues, questions, etc
+
+https://github.com/msafi/xvsc/issues

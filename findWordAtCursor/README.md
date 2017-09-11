@@ -21,3 +21,15 @@ On my Mac system, I've mapped these two commands to:
 
 * `cmd+ctrl+down` for `findWordAtCursor.next`
 * `cmd+ctrl+up` for `findWordAtCursor.previous`
+
+## Checkout my other VS Code projects
+
+They're listed and described [here](https://github.com/msafi/xvsc#projects-in-this-repo).
+
+## Let's talk about features on twitter
+
+This is [my handle](https://twitter.com/msafi)
+
+## Issues, questions, etc
+
+https://github.com/msafi/xvsc/issues
