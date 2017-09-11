@@ -4,7 +4,7 @@ xvsc contains my personal configurations, theme, and the extensions I've develop
 
 xvsc stands for "extras for vsc".
 
-## Content
+## Projects in this repo
 
 ### [Trailscasts](./trailscasts)
 
@@ -28,9 +28,21 @@ Keyboard shortcut ➡ Type a few letters to find matches ➡ Jump
 
 Like VS Code built-in smart selection feature, but with better abstract syntax trees.
 
-### [Configs](./configs), [xvscMisc](./xvscMisc), and [xvscSnippets](./xvscSnippets)
+### [vie](https://github.com/msafi/vie)
 
-I also put my `settings.json`, `keybindings.json`, and code snippets in this repo. I also have [this extension](./xvscMisc) where I put bits and pieces of functionality.
+vie allows you to quickly view pull-requests or browse other codebases in VS Code (or any text editor, really). It can come in handy if you do a lot of that.
+
+### Other content
+
+I also put my [`settings.json`](./configs/settings.json), [`keybindings.json`](./configs/keybindings.json), [code snippets](./xvscSnippets/snippets), and other [miscellaneous bits and pieces of functionality](./xvscMisc) in this repo.
+
+## Let's talk about features on twitter
+
+This is [my handle](https://twitter.com/msafi)
+
+## Issues, questions, etc
+
+https://github.com/msafi/xvsc/issues
 
 ## License
 

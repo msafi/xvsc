@@ -26,12 +26,7 @@ export class AssociationManager {
   ]
 
   public createAssociation = (letter: string, range: Range, textEditor: TextEditor) => {
-    let finalLetter = letter
-
-    if (letter === letter.toUpperCase()) {
-      finalLetter = `⇧${letter.toLowerCase()}`
-    }
-
+    const finalLetter = letter === letter.toUpperCase() ? `⇧${letter.toLowerCase()}` : letter
     const type = window.createTextEditorDecorationType({
       backgroundColor: new ThemeColor('editor.wordHighlightBackground'),
       before: {

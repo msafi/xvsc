@@ -58,14 +58,12 @@ export class FindJump {
 
   performSearch = () => {
     const {matches, availableJumpChars} = this.getMatchesAndAvailableJumpChars()
-    const matchesIsBigger = matches.length > availableJumpChars.length
-    const iterationLength = matchesIsBigger ? availableJumpChars.length : matches.length
 
     if (matches.length > 0) {
       this.associationManager.dispose()
     }
 
-    for(let i = 0; i < iterationLength; i++) {
+    for(let i = 0; i < matches.length; i++) {
       const match = matches[i]
       const availableJumpChar = availableJumpChars[i]
       const {index, value} = match
@@ -84,21 +82,12 @@ export class FindJump {
 
     const {line, character} = range.start
 
-    if (this.activatedWithSelection) {
-      this.textEditor.selection = new Selection(
-        this.textEditor.selection.start.line,
-        this.textEditor.selection.start.character,
-        line,
-        character,
-      )
-    } else {
-      this.textEditor.selection = new Selection(
-        line,
-        character,
-        line,
-        character,
-      )
-    }
+    this.textEditor.selection = new Selection(
+      this.activatedWithSelection ? this.textEditor.selection.start.line : line,
+      this.activatedWithSelection ? this.textEditor.selection.start.character : character,
+      line,
+      character,
+    )
 
     this.reset()
   }

@@ -29,3 +29,15 @@ Find-Jump adds these commands:
 * `findJump.activateWithSelection`: like `findJump.activate` but will make a selection from the current cursor position to the new cursor position
 
 **Note** No keybinding is provided by this extension. You have to create one yourself.
+
+## Checkout my other VS Code projects
+
+They're listed and described on [here](https://github.com/msafi/xvsc#projects-in-this-repo).
+
+## Let's talk about features on twitter
+
+This is [my handle](https://twitter.com/msafi)
+
+## Issues, questions, etc
+
+https://github.com/msafi/xvsc/issues
