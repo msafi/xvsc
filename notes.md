@@ -3,17 +3,18 @@
 The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
 
 - [ ] Continue comment on new line
-- [ ] Go to last edit location
+- [ ] Add syntax highlighting to CSS
 - [ ] Move through tabs of current editor group only
 - [ ] Set title bar active and inactive colors https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors-macos
 - [ ] Copy line keyboard shortcut. cmd+c on IntelliJ.
-- [ ] Search jump feature, like Ace Jump on IntelliJ
-- [ ] Get Emmet to work
 - [ ] Change the color of types to orange
 - [ ] Change color of destructured/renamed, property
 - [ ] Ability to fold markdown links *INVESTIGATE*
 - [ ] Navigate files in Explorer by typing [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33109)
 - [ ] Semantic syntax highlighting [*BLOCKED*](https://github.com/Microsoft/vscode/issues/585)
+- [X] Go to last edit location
+- [X] Get Emmet to work
+- [X] Search jump feature, like Ace Jump on IntelliJ
 - [X] Improve Open SourceTree extension to make it able to open parent folder git
 - [X] Create a repl
 - [X] Find/replace keyboard shortcut for entire project and for open file

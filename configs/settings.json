@@ -66,5 +66,6 @@
     "comments": false,
     "strings": false
   },
-  "editor.suggestOnTriggerCharacters": false
+  "editor.suggestOnTriggerCharacters": false,
+  "emmet.triggerExpansionOnTab": true
 }
