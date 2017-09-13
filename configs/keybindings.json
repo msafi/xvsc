@@ -199,5 +199,9 @@
   {
     "key": "cmd+k v",
     "command": "workbench.action.terminal.clear"
+  },
+  {
+    "key": "cmd+s",
+    "command": "workbench.action.files.saveAll"
   }
 ]
