@@ -21,6 +21,7 @@ export class FindJump {
   associationManager = new AssociationManager()
   activityIndicatorState = 0
   activatedWithSelection = false
+  searchFunctionDebounceTracker: any
 
   activate = (textEditor: TextEditor) => {
     this.textEditor = textEditor
@@ -46,14 +47,25 @@ export class FindJump {
   }
 
   onInput = (input: string, char: string) => {
-    if (this.associationManager.associations.has(char)) {
+    if (
+      this.associationManager.associations.has(char) &&
+      this.searchFunctionDebounceTracker === undefined
+    ) {
       this.jump(char)
       return
     }
 
     this.userInput = input
     this.updateStatusBarWithActivityIndicator()
-    this.performSearch()
+
+    clearTimeout(this.searchFunctionDebounceTracker)
+    this.searchFunctionDebounceTracker = setTimeout(
+      () => {
+        this.performSearch()
+        this.searchFunctionDebounceTracker = undefined
+      },
+      250,
+    )
   }
 
   performSearch = () => {
@@ -64,6 +76,10 @@ export class FindJump {
     }
 
     for(let i = 0; i < matches.length; i++) {
+      if (availableJumpChars[i] === undefined) {
+        break
+      }
+
       const match = matches[i]
       const availableJumpChar = availableJumpChars[i]
       const {index, value} = match
@@ -98,12 +114,17 @@ export class FindJump {
     const availableJumpChars = [...this.associationManager.jumpChars]
     const matches: { value: Match, index: number }[] = []
 
-    for (const {line, index} of documentIterator) {
-      if (matches.length >= availableJumpChars.length) { break }
+    outer: for (const {line, index} of documentIterator) {
+      const lineMatches = this.getLineMatches(line)
 
-      this.getLineMatches(line).forEach((lineMatch) => {
+      for(const lineMatch of lineMatches) {
+        if (matches.length >= availableJumpChars.length) {
+          break outer
+        }
+
         matches.push({value: lineMatch, index})
-        lineMatch.excludedChars.forEach((excludedChar) => {
+
+        for(const excludedChar of lineMatch.excludedChars) {
           for (let i = 0; i < 2; i++) {
             const method = i === 0 ? 'toLowerCase' : 'toUpperCase'
             const indexOfExcludedChar = availableJumpChars.indexOf(excludedChar[method]())
@@ -112,8 +133,8 @@ export class FindJump {
               availableJumpChars.splice(indexOfExcludedChar, 1)
             }
           }
-        })
-      })
+        }
+      }
     }
 
     return {matches, availableJumpChars}
