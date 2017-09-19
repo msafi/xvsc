@@ -64,7 +64,7 @@ export class FindJump {
         this.performSearch()
         this.searchFunctionDebounceTracker = undefined
       },
-      250,
+      150,
     )
   }
 

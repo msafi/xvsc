@@ -13,7 +13,7 @@
     ]
   },
   "function($params) {...}": {
-    "prefix": "function",
+    "prefix": "func",
     "body": [
       "function($0) {",
       "}"

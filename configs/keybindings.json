@@ -203,5 +203,9 @@
   {
     "key": "cmd+s",
     "command": "workbench.action.files.saveAll"
+  },
+  {
+    "key": "cmd+l",
+    "command": "workbench.action.gotoLine"
   }
 ]

@@ -2,6 +2,8 @@
 
 The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
 
+- [ ] Auto-hide sidebar
+- [ ] Make editing one end of an HTML tag update the closing one
 - [ ] Continue comment on new line
 - [ ] Add syntax highlighting to CSS
 - [ ] Move through tabs of current editor group only

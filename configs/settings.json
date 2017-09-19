@@ -24,7 +24,8 @@
     "mksafi",
     "repo",
     "tokenized",
-    "tokenizer"
+    "tokenizer",
+    "typeahead"
   ],
   "eslint.validate": [
     "javascript",
@@ -38,6 +39,7 @@
   "eslint.nodePath": "/Users/mk/Dropbox/vscode/xvsc/node_modules",
   "eslint.run": "onSave",
   "tslint.configFile": "/Users/mk/Dropbox/vscode/xvsc/configs/tslint.json",
+  "tslint.nodePath": "/Users/mk/Dropbox/vscode/xvsc/node_modules",
   "tslint.autoFixOnSave": true,
   "tslint.run": "onSave",
   "editor.formatOnPaste": true,
@@ -67,5 +69,7 @@
     "strings": false
   },
   "editor.suggestOnTriggerCharacters": false,
-  "emmet.triggerExpansionOnTab": true
+  "emmet.triggerExpansionOnTab": true,
+  "vtools.autoHideSideBar": true,
+  "eslint.enable": false
 }
