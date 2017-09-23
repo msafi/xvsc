@@ -58,7 +58,7 @@
     "**/bower_components": true,
     "out": true
   },
-  "files.insertFinalNewline": true,
+  "files.insertFinalNewline": false,
   "code-runner.executorMap": {
     "typescript": "/Users/mk/Dropbox/xvsc/node_modules/.bin/ts-node"
   },
@@ -70,6 +70,6 @@
   },
   "editor.suggestOnTriggerCharacters": false,
   "emmet.triggerExpansionOnTab": true,
-  "vtools.autoHideSideBar": true,
-  "eslint.enable": false
+  "eslint.enable": false,
+  "git.enableSmartCommit": true
 }
