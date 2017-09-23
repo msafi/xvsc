@@ -2,8 +2,7 @@
 
 The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
 
-- [ ] Auto-hide sidebar
-- [ ] Make editing one end of an HTML tag update the closing one
+- [ ] Enable ESLint non-stylistic errors for all repos
 - [ ] Continue comment on new line
 - [ ] Add syntax highlighting to CSS
 - [ ] Move through tabs of current editor group only
@@ -14,6 +13,10 @@ The following is the functionality that I need to add to VS Code to bring it to 
 - [ ] Ability to fold markdown links *INVESTIGATE*
 - [ ] Navigate files in Explorer by typing [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33109)
 - [ ] Semantic syntax highlighting [*BLOCKED*](https://github.com/Microsoft/vscode/issues/585)
+- [X] History of recently searched strings
+- [X] Auto-hide sidebar
+- [X] Highlight matching JSX tag
+- [X] Make editing one end of an HTML tag update the closing one
 - [X] Go to last edit location
 - [X] Get Emmet to work
 - [X] Search jump feature, like Ace Jump on IntelliJ
