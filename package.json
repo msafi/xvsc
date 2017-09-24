@@ -1,7 +1,8 @@
 {
   "name": "xvsc",
   "version": "1.0.0",
-  "description": "xvsc contains my personal configurations, theme, and the extensions I've developed for VS Code.",
+  "description":
+    "xvsc contains my personal configurations, theme, and the extensions I've developed for VS Code.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,7 +25,6 @@
     "eslint-plugin-promise": "^3.5.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.7.0",
-    "tslint-config-standard": "^6.0.1",
     "tslint-eslint-rules": "^4.1.1",
     "tslint-microsoft-contrib": "^5.0.1",
     "typescript": "^2.5.2"

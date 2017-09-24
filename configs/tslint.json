@@ -1,10 +1,5 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-microsoft-contrib",
-    "tslint-eslint-rules",
-    "tslint-config-standard"
-  ],
+  "extends": ["tslint:recommended", "tslint-microsoft-contrib", "tslint-eslint-rules"],
   "rules": {
     "no-suspicious-comment": false,
     "no-conditional-assignment": false,
@@ -55,11 +50,11 @@
     "ordered-imports": false,
     "no-var-requires": false,
     "interface-name": [true, "never-prefix"],
-    "semicolon": [true, "never"],
+    "semicolon": [true, "always"],
     "no-console": [false],
     "no-require-imports": false,
     "space-before-function-paren": [true, "never"],
     "whitespace": [false],
-    "object-curly-spacing": [true, "never"]
+    "object-curly-spacing": [true, "always"]
   }
 }
