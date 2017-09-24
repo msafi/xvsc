@@ -29,7 +29,10 @@
       "scope": [
         "variable",
         // Markdown: link
-        "markup.underline"
+        "markup.underline",
+        // CSS property value
+        "meta.property-value support",
+        "meta.property-value constant"
       ],
       "settings": {
         "foreground": "#98CDCD"
@@ -69,9 +72,7 @@
     },
     {
       "name": "White and underlined",
-      "scope": [
-        "variable.parameter"
-      ],
+      "scope": ["variable.parameter"],
       "settings": {
         "fontStyle": "underline",
         "foreground": "#FFFFFF"
@@ -89,7 +90,9 @@
         // JavaScript: function declarations/expressions
         "entity.name.function",
         // JavaScript: built-in functions
-        "support.function"
+        "support.function",
+        // CSS selector
+        "meta.selector entity"
       ],
       "settings": {
         "foreground": "#E8BF6A"
@@ -97,11 +100,7 @@
     },
     {
       "name": "White",
-      "scope": [
-        "meta.brace.round",
-        "meta.jsx.children",
-        "punctuation"
-      ],
+      "scope": ["meta.brace.round", "meta.jsx.children", "punctuation"],
       "settings": {
         "foreground": "#FFFFFF"
       }
@@ -136,10 +135,7 @@
     },
     {
       "name": "Brown, italic",
-      "scope": [
-        "comment",
-        "punctuation.definition.comment"
-      ],
+      "scope": ["comment", "punctuation.definition.comment"],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#BC9458"
