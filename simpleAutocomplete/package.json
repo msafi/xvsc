@@ -11,12 +11,8 @@
     "type": "git",
     "url": "https://github.com/msafi/xvsc/tree/master/simpleAutocomplete"
   },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:simpleAutocomplete.next"
-  ],
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:simpleAutocomplete.next"],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
