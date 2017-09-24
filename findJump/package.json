@@ -2,7 +2,7 @@
   "name": "find-jump",
   "displayName": "Find-Jump",
   "description": "Like Ace Jump, but better. Quickly move cursor to visible location",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "publisher": "mksafi",
   "engines": {
     "vscode": "^1.15.0"
@@ -11,13 +11,8 @@
     "type": "git",
     "url": "https://github.com/msafi/xvsc/tree/master/findJump"
   },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:findJump.activate",
-    "onCommand:findJump.activateWithSelection"
-  ],
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:findJump.activate", "onCommand:findJump.activateWithSelection"],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
