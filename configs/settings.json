@@ -66,5 +66,6 @@
   "git.enableSmartCommit": true,
   "editor.formatOnSave": true,
   "prettier.printWidth": 100,
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all"
 }
