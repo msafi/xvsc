@@ -12,9 +12,7 @@
   "editor.multiCursorModifier": "alt",
   "editor.detectIndentation": false,
   "window.newWindowDimensions": "inherit",
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "files.trimTrailingWhitespace": true,
   "cSpell.userWords": [
     "decrementing",
@@ -27,12 +25,7 @@
     "tokenizer",
     "typeahead"
   ],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "json"
-  ],
-  "eslint.autoFixOnSave": true,
+  "eslint.validate": ["javascript", "javascriptreact", "json"],
   "eslint.options": {
     "configFile": "/Users/mk/Dropbox/vscode/xvsc/configs/eslintrc.json"
   },
@@ -40,9 +33,8 @@
   "eslint.run": "onSave",
   "tslint.configFile": "/Users/mk/Dropbox/vscode/xvsc/configs/tslint.json",
   "tslint.nodePath": "/Users/mk/Dropbox/vscode/xvsc/node_modules",
-  "tslint.autoFixOnSave": true,
   "tslint.run": "onSave",
-  "editor.formatOnPaste": true,
+  "editor.formatOnPaste": false,
   "cSpell.showStatus": false,
   "files.exclude": {
     "**/.git": true,
@@ -71,5 +63,8 @@
   "editor.suggestOnTriggerCharacters": false,
   "emmet.triggerExpansionOnTab": true,
   "eslint.enable": false,
-  "git.enableSmartCommit": true
+  "git.enableSmartCommit": true,
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true
 }
