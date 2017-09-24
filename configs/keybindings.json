@@ -207,5 +207,9 @@
   {
     "key": "cmd+l",
     "command": "workbench.action.gotoLine"
+  },
+  {
+    "key": "alt+cmd+g",
+    "command": "workbench.view.scm"
   }
 ]
