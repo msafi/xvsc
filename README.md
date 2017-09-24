@@ -36,9 +36,9 @@ vie allows you to quickly view pull-requests or browse other codebases in VS Cod
 
 I also put my [`settings.json`](./configs/settings.json), [`keybindings.json`](./configs/keybindings.json), [code snippets](./xvscSnippets/snippets), and other [miscellaneous bits and pieces of functionality](./xvscMisc) in this repo.
 
-## Let's talk about features on twitter
+## To discuss stuff
 
-This is [my handle](https://twitter.com/msafi)
+Tweet at [@msafi](https://twitter.com/msafi)
 
 ## Issues, questions, etc
 

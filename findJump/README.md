@@ -34,9 +34,9 @@ Find-Jump adds these commands:
 
 They're listed and described [here](https://github.com/msafi/xvsc#projects-in-this-repo).
 
-## Let's talk about features on twitter
+## To discuss stuff
 
-This is [my handle](https://twitter.com/msafi)
+Tweet at [@msafi](https://twitter.com/msafi)
 
 ## Issues, questions, etc
 
