@@ -12,7 +12,9 @@
     "editor.background": "#090909",
     "editor.lineHighlightBackground": "#202020",
     "editorSuggestWidget.background": "#0000009B",
-    "editorHoverWidget.background": "#0000009B"
+    "editorHoverWidget.background": "#0000009B",
+    "titleBar.activeBackground": "#0A0A0A",
+    "titleBar.inactiveBackground": "#2C2C2C"
   },
   "tokenColors": [
     {
