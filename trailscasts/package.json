@@ -2,14 +2,12 @@
   "name": "trailscasts",
   "displayName": "Trailscasts",
   "description": "Like Railscasts but brighter and more saturated",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "publisher": "mksafi",
   "engines": {
     "vscode": "^1.15.0"
   },
-  "categories": [
-    "Themes"
-  ],
+  "categories": ["Themes"],
   "contributes": {
     "themes": [
       {
