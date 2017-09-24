@@ -1,7 +1,6 @@
 {
   "extends": [
-    "eslint:recommended",
-    "standard"
+    "eslint:recommended"
   ],
   "plugins": [
     "json"
