@@ -1,15 +1,13 @@
 {
   "name": "xvsc-misc",
-  "displayName": "xvsc-misc",
+  "displayName": "xvscMisc",
   "description": "Misc functionality from xvsc",
   "version": "0.0.1",
-  "publisher": "msafi",
+  "publisher": "mksafi",
   "engines": {
     "vscode": "^1.15.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "activationEvents": [
     "onCommand:xvscm.openInSourceTree",
     "onCommand:xvscm.deleteToTextBeginning",
@@ -17,13 +15,16 @@
   ],
   "main": "./out/src/extension",
   "contributes": {
-    "commands": [{
-      "command": "xvscm.openInSourceTree",
-      "title": "Open current git repo in SourceTree"
-    }, {
-      "command": "xvscm.deleteToTextBeginning",
-      "title": "Delete to the first non-whitespace character"
-    }]
+    "commands": [
+      {
+        "command": "xvscm.openInSourceTree",
+        "title": "Open current git repo in SourceTree"
+      },
+      {
+        "command": "xvscm.deleteToTextBeginning",
+        "title": "Delete to the first non-whitespace character"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
