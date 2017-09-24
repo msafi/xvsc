@@ -68,5 +68,16 @@
   "editor.formatOnSave": true,
   "prettier.printWidth": 100,
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "all",
+  "sync.gist": "12ecdf4397b5597c3cf5e7bfff453f96",
+  "sync.lastUpload": "2017-09-24T21:26:39.270Z",
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.lastDownload": "",
+  "sync.forceDownload": false,
+  "sync.anonymousGist": false,
+  "sync.host": "",
+  "sync.pathPrefix": "",
+  "sync.quietSync": false,
+  "sync.askGistName": false
 }
