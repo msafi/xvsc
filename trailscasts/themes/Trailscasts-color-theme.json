@@ -92,7 +92,10 @@
         // JavaScript: built-in functions
         "support.function",
         // CSS selector
-        "meta.selector entity"
+        "meta.selector entity",
+        "meta.selector entity",
+        "entity.name.tag.css",
+        "entity.other.attribute-name"
       ],
       "settings": {
         "foreground": "#E8BF6A"
