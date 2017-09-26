@@ -1,18 +1,16 @@
-import * as c from 'vscode';
-import * as shelljs from 'shelljs'
-import * as _ from 'lodash'
+import { TextEditor, Range } from 'vscode';
 
-export const deleteToTextBeginning = () => {
-  const activeTextEditor = c.window.activeTextEditor
-  
-  activeTextEditor.edit((textEditorEdit) => {
-    textEditorEdit.delete(new c.Range(
-      activeTextEditor.selection.end.line,
-      activeTextEditor.document.lineAt(
-        activeTextEditor.selection.end.line
-      ).firstNonWhitespaceCharacterIndex,
-      activeTextEditor.selection.end.line,
-      activeTextEditor.selection.end.character,
-    ))
-  })
-}
+export const deleteToTextBeginning = (textEditor: TextEditor) => {
+  const { selection } = textEditor;
+
+  textEditor.edit(textEditorEdit => {
+    textEditorEdit.delete(
+      new Range(
+        selection.end.line,
+        textEditor.document.lineAt(selection.end.line).firstNonWhitespaceCharacterIndex,
+        selection.end.line,
+        selection.end.character,
+      ),
+    );
+  });
+};

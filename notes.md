@@ -6,6 +6,7 @@ The following is the functionality that I need to add to VS Code to bring it to 
 - [ ] Continue comment on new line
 - [ ] Add syntax highlighting to CSS
 - [ ] Move through tabs of current editor group only
+- [ ] The highlight in the Explorer moves back to the open file after deleting a file that's highlighted. This is annoying
 - [ ] Set title bar active and inactive colors https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors-macos
 - [ ] Copy line keyboard shortcut. cmd+c on IntelliJ.
 - [ ] Change the color of types to orange
