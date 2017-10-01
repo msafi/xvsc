@@ -5,7 +5,7 @@
     "editor.foreground": "#E6E1DC",
     "activityBarBadge.background": "#007acc",
     "sideBarTitle.foreground": "#bbbbbb",
-    "statusBar.background": "#303030",
+    "statusBar.background": "#252526",
     "editorBracketMatch.background": "#3344F09E",
     "editorBracketMatch.border": "#3344F09E",
     "editorRuler.foreground": "#FFFFFF24",
@@ -14,7 +14,8 @@
     "editorSuggestWidget.background": "#000000D6",
     "editorHoverWidget.background": "#000000D6",
     "titleBar.activeBackground": "#0A0A0A",
-    "titleBar.inactiveBackground": "#2C2C2C"
+    "titleBar.inactiveBackground": "#2C2C2C",
+    "editorGroupHeader.tabsBackground": "#252526"
   },
   "tokenColors": [
     {
@@ -72,7 +73,9 @@
     },
     {
       "name": "White and underlined",
-      "scope": ["variable.parameter"],
+      "scope": [
+        "variable.parameter"
+      ],
       "settings": {
         "fontStyle": "underline",
         "foreground": "#FFFFFF"
@@ -103,7 +106,11 @@
     },
     {
       "name": "White",
-      "scope": ["meta.brace.round", "meta.jsx.children", "punctuation"],
+      "scope": [
+        "meta.brace.round",
+        "meta.jsx.children",
+        "punctuation"
+      ],
       "settings": {
         "foreground": "#FFFFFF"
       }
@@ -138,7 +145,10 @@
     },
     {
       "name": "Brown, italic",
-      "scope": ["comment", "punctuation.definition.comment"],
+      "scope": [
+        "comment",
+        "punctuation.definition.comment"
+      ],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#BC9458"
