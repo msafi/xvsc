@@ -1,5 +1,5 @@
-// Place your key bindings in this file to overwrite the defaults
 [
+  // Place your key bindings in this file to overwrite the defaults
   {
     "key": "ctrl+;",
     "command": "findJump.activate"
@@ -211,5 +211,30 @@
   {
     "key": "alt+cmd+g",
     "command": "workbench.view.scm"
+  },
+  {
+    "key": "cmd+g p",
+    "command": "git.pushWithTags"
+  },
+  {
+    "key": "cmd+g c",
+    "command": "git.checkout"
+  },
+  {
+    "key": "cmd+g s",
+    "command": "git.stash"
+  },
+  {
+    "key": "cmd+g a",
+    "command": "gitlens.showQuickStashList"
+  },
+  {
+    "key": "cmd+g u",
+    "command": "git.pull"
+  },
+  {
+    "key": "cmd+g h",
+    "command": "gitlens.showQuickFileHistory",
+    "when": "gitlens:enabled"
   }
 ]
