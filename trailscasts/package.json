@@ -1,11 +1,15 @@
 {
   "name": "trailscasts",
   "displayName": "Trailscasts",
-  "description": "Like Railscasts but brighter and more saturated",
-  "version": "1.2.2",
+  "description": "Like Railscasts but more vibrant and consistent",
+  "version": "1.2.3",
   "publisher": "mksafi",
   "engines": {
     "vscode": "^1.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msafi/xvsc/tree/master/trailscasts"
   },
   "categories": ["Themes"],
   "contributes": {
