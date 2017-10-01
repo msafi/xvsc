@@ -1,19 +1,22 @@
 # Tasks
 
-The following is the functionality that I need to add to VS Code to bring it to parity with IntelliJ
+The following is the functionality that I need to add to VS Code to make it better
 
-- [ ] Enable ESLint non-stylistic errors for all repos
-- [ ] Continue comment on new line
-- [ ] Add syntax highlighting to CSS
+- [ ] Go to Definition in New Tab
+- [ ] Add repo backlinks to the Trailscasts page on VS Code Market Place
 - [ ] Move through tabs of current editor group only
 - [ ] The highlight in the Explorer moves back to the open file after deleting a file that's highlighted. This is annoying
-- [ ] Set title bar active and inactive colors https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors-macos
 - [ ] Copy line keyboard shortcut. cmd+c on IntelliJ.
 - [ ] Change the color of types to orange
 - [ ] Change color of destructured/renamed, property
 - [ ] Ability to fold markdown links *INVESTIGATE*
+- [ ] Continue comment on new line
 - [ ] Navigate files in Explorer by typing [*BLOCKED*](https://github.com/Microsoft/vscode/issues/33109)
 - [ ] Semantic syntax highlighting [*BLOCKED*](https://github.com/Microsoft/vscode/issues/585)
+- [X] Set title bar active and inactive colors [docs](https://code.visualstudio.com/docs/getstarted/theme-color-reference#_title-bar-colors-macos)
+- [X] Enable ESLint non-stylistic errors for all repos
+- [X] Change the color of the gutter and line numbers so that they are not as black as the editable area
+- [X] Add syntax highlighting to CSS
 - [X] History of recently searched strings
 - [X] Auto-hide sidebar
 - [X] Highlight matching JSX tag
