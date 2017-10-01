@@ -102,19 +102,23 @@ export class SimpleAutocomplete {
   }
 
   private async setMatch(match: string, activeTextEditor: TextEditor) {
-    const { selection, document } = activeTextEditor;
+    const { selections, document } = activeTextEditor;
 
-    const wordRange = document.getWordRangeAtPosition(selection.end);
+    // Start from last selection so that edits don't alter the locations of previous selections
+    for (let i = selections.length - 1; i >= 0; i--) {
+      const selection = selections[i];
+      const wordRange = document.getWordRangeAtPosition(selection.end);
 
-    if (wordRange) {
-      this.state.preventReset = true;
+      if (wordRange) {
+        this.state.preventReset = true;
 
-      await activeTextEditor.edit(editBuilder => {
-        editBuilder.delete(wordRange);
-        editBuilder.insert(selection.end, match);
-      });
+        await activeTextEditor.edit(editBuilder => {
+          editBuilder.delete(wordRange);
+          editBuilder.insert(selection.end, match);
+        });
 
-      this.state.preventReset = false;
+        this.state.preventReset = false;
+      }
     }
   }
 }
