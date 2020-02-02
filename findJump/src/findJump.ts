@@ -3,6 +3,7 @@ import {
   TextEditor,
   TextLine,
   Range,
+  workspace
 } from 'vscode'
 import {InlineInput} from './inlineInput'
 import {documentRippleScanner} from './documentRippleScanner'
@@ -22,6 +23,7 @@ export class FindJump {
   activityIndicatorState = 0
   activatedWithSelection = false
   searchFunctionDebounceTracker: any
+  workspaceFindJumpConfig = workspace.getConfiguration('findJump');
 
   activate = (textEditor: TextEditor) => {
     this.textEditor = textEditor
@@ -96,7 +98,8 @@ export class FindJump {
       return
     }
 
-    const {line, character} = range.start
+    const cursorPosition = this.workspaceFindJumpConfig.get('jumpCursorPosition', 'start');
+    const {line, character} = this.activatedWithSelection ? range.start : range[cursorPosition]
 
     this.textEditor.selection = new Selection(
       this.activatedWithSelection ? this.textEditor.selection.start.line : line,

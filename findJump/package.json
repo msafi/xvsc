@@ -24,7 +24,23 @@
         "command": "findJump.activateWithSelection",
         "title": "Activate Find-Jump in selection mode"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Find-Jump",
+      "properties": {
+        "findJump.jumpCursorPosition": {
+          "type": "string",
+          "default": "start",
+          "enum": [
+            "start",
+            "end"
+          ],
+          "enumDescriptions": [
+            "Place where to put cursor: before searching range or after"
+          ]
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
