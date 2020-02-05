@@ -1,5 +1,9 @@
 # xvsc
 
+⚠️ This library is not maintained. Please do not send pull-requests or open issues.
+
+---
+
 xvsc contains my personal configurations, theme, and the extensions I've developed for VS Code.
 
 xvsc stands for "extras for vsc".
