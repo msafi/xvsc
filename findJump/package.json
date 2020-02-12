@@ -12,7 +12,11 @@
     "url": "https://github.com/msafi/xvsc/tree/master/findJump"
   },
   "categories": ["Other"],
-  "activationEvents": ["onCommand:findJump.activate", "onCommand:findJump.activateWithSelection"],
+  "activationEvents": [
+    "onCommand:findJump.activate",
+    "onCommand:findJump.activateWithSelection",
+    "onCommand:findJump.activateWithWordSelection"
+  ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
@@ -23,7 +27,11 @@
       {
         "command": "findJump.activateWithSelection",
         "title": "Activate Find-Jump in selection mode"
-      }
+      },
+			{
+				"command": "findJump.activateWithWordSelection",
+				"title": "Activate Find-Jump in word selection mode"
+			}
     ]
   },
   "scripts": {

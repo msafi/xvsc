@@ -27,6 +27,7 @@ Find-Jump adds these commands:
 
 * `findJump.activate`: which activates Find-Jump
 * `findJump.activateWithSelection`: like `findJump.activate` but will make a selection from the current cursor position to the new cursor position
+* `findJump.activateWithWordSelection`: activates Find-Jump and selects the word at the new cursor position
 
 **Note** No keybinding is provided by this extension. You have to create one yourself.
 

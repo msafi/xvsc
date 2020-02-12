@@ -15,6 +15,10 @@ export function activate(context: ExtensionContext) {
       'findJump.activateWithSelection',
       findJump.activateWithSelection,
     ),
+    commands.registerTextEditorCommand(
+      'findJump.activateWithWordSelection',
+      findJump.activateWithWordSelection,
+    ),
   )
 }
 
