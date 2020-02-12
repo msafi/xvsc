@@ -1,5 +1,6 @@
 import {
   Selection,
+  Position,
   TextEditor,
   TextLine,
   Range,
@@ -21,6 +22,7 @@ export class FindJump {
   associationManager = new AssociationManager()
   activityIndicatorState = 0
   activatedWithSelection = false
+  activatedWithWordSelection = false
   searchFunctionDebounceTracker: any
 
   activate = (textEditor: TextEditor) => {
@@ -43,6 +45,11 @@ export class FindJump {
 
   activateWithSelection = (textEditor: TextEditor) => {
     this.activatedWithSelection = true
+    this.activate(textEditor)
+  }
+
+  activateWithWordSelection = (textEditor: TextEditor) => {
+    this.activatedWithWordSelection = true
     this.activate(textEditor)
   }
 
@@ -98,14 +105,28 @@ export class FindJump {
 
     const {line, character} = range.start
 
-    this.textEditor.selection = new Selection(
-      this.activatedWithSelection ? this.textEditor.selection.start.line : line,
-      this.activatedWithSelection ? this.textEditor.selection.start.character : character,
-      line,
-      character,
-    )
+    const selection = this.getNewSelection(line, character);
+    this.textEditor.selection = selection;
 
     this.reset()
+  }
+
+  getNewSelection = (line: number, character: number) => {
+    if (this.activatedWithSelection) {
+      return new Selection(
+        this.textEditor.selection.start.line,
+        this.textEditor.selection.start.character,
+        line,
+        character
+      );
+    } else if (this.activatedWithWordSelection) {
+      const position = new Position(line, character);
+      const wordRange = this.textEditor.document.getWordRangeAtPosition(position);
+
+      return new Selection(wordRange.start, wordRange.end);
+    } else {
+      return new Selection(line, character, line, character);
+    }
   }
 
   getMatchesAndAvailableJumpChars = () => {
@@ -164,6 +185,7 @@ export class FindJump {
   reset = () => {
     this.isActive = false
     this.activatedWithSelection = false
+    this.activatedWithWordSelection = false;
     this.userInput = ''
     this.clearActivityIndicator()
     this.inlineInput.destroy()
